@@ -1,0 +1,21 @@
+{
+  "name": "Fuzaite.Auckland",
+  "version": "0.0.0",
+  "authors": [
+    "Raphael Fuzaite"
+  ],
+  "description": "App to manage financial goals for wedding",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "semantic-ui": "~1.12.3",
+    "angular": "~1.4.0"
+  }
+}
