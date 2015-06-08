@@ -1,0 +1,25 @@
+{
+  "name": "fuzaite.auckland",
+  "version": "0.0.0",
+  "description": "Gerenciamento de finanças pessoais compartilhado",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaphaelFuzaite/Fuzaite.Auckland.git"
+  },
+  "author": "Raphael Fuzaite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaphaelFuzaite/Fuzaite.Auckland/issues"
+  },
+  "homepage": "https://github.com/RaphaelFuzaite/Fuzaite.Auckland#readme",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.5"
+  }
+}
