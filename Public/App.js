@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleNameDependencies);
+angular.module(ApplicationConfiguration.ModuleName, ApplicationConfiguration.ModuleNameDependencies);
 
-angular.module(ApplicationConfiguration.applicationModuleName).config(['$locationProvider', function($locationProvider){
+angular.module(ApplicationConfiguration.ModuleName).config(['$locationProvider', function($locationProvider){
 	$locationProvider.hasPrefix('!');
 }]);
