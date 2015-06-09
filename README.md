@@ -1,4 +1,7 @@
 ## Auckland - Gerenciamento de Finanças
+[![Build Status](https://travis-ci.org/RaphaelFuzaite/Fuzaite.Auckland.svg?branch=master)](https://travis-ci.org/RaphaelFuzaite/Fuzaite.Auckland)
+[![Coverage Status](https://coveralls.io/repos/RaphaelFuzaite/Fuzaite.Auckland/badge.svg)](https://coveralls.io/r/RaphaelFuzaite/Fuzaite.Auckland
+[![Dependency Status](https://david-dm.org/RaphaelFuzaite/Fuzaite.Auckland.svg)](https://david-dm.org/RaphaelFuzaite/Fuzaite.Auckland)
 Projeto de acesso privado para gerenciamento de finanças pessoais para a conquista de metas pré-estabelecidas.
 
 ## Tecnologia
