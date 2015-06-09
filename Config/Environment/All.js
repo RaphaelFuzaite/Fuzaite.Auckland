@@ -7,7 +7,7 @@ module.exports = {
 		Keywords: 'gerenciamento de finanças, fuzaite',
 	},
 	Port: process.env.PORT || 3000,
-	//templateEngine: 'swig',
+	TemplateEngine: 'jade',
 	Assets: {
 		Lib: {
 			Style: [
