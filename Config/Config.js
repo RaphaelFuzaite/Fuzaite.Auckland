@@ -20,17 +20,13 @@ module.exports.GetGlobbedFiles = function(globPatterns, removeRoot) {
 		if (urlRegex.test(globPatterns)) {
 			output.push(globPatterns);
 		} else {
-			glob(globPatterns, {
-				sync: true
-			}, function(err, files) {
-				if (removeRoot) {
-					files = files.map(function(file) {
-						return file.replace(removeRoot, '');
-					});
-				}
-
-				output = _.union(output, files);
-			});
+			var files = glob.sync(globPatterns);
+			if (removeRoot) {
+			    files = files.map(function(file) {
+			        return file.replace(removeRoot, '');
+			    });
+			}
+			output = _.union(output, files);
 		}
 	}
 
@@ -48,6 +44,6 @@ module.exports.GetJavaScriptAssets = function(includeTests) {
 };
 
 module.exports.GetCSSAssets = function() {
-	var output = this.getGlobbedFiles(this.Assets.Lib.Style.concat(this.Assets.Style), 'Public/');
+	var output = this.GetGlobbedFiles(this.Assets.Lib.Style.concat(this.Assets.Style), 'Public/');
 	return output;
 };

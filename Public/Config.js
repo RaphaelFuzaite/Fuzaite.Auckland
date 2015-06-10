@@ -10,7 +10,7 @@ var ApplicationConfiguration = (function(){
 	
 	return {
 		ModuleName: 				applicationModuleName,
-		ModuleNameDependencies: 	['ui.router'],
+		ModuleNameDependencies: 	['ui.router', 'ui.bootstrap'],
 		RegisterModule: 			registerModule
 	};
 	

@@ -7,7 +7,7 @@ module.exports = {
 		Keywords: 'gerenciamento de finanças, fuzaite',
 	},
 	Port: process.env.PORT || 3000,
-	TemplateEngine: 'jade',
+	TemplateEngine: 'swig',
 	Assets: {
 		Lib: {
 			Style: [
@@ -16,6 +16,7 @@ module.exports = {
 			Script: [
 				'Public/Lib/angular/angular.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.js',
+				'Public/Lib/angular-bootstrap/ui-bootstrap.js',
 				'Public/Lib/semantic-ui/dist/semantic.js'
 			]
 		},

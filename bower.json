@@ -17,6 +17,7 @@
     "jquery": "~2.1.4",
     "semantic-ui": "~1.12.3",
     "angular": "~1.4.0",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.0"
   }
 }

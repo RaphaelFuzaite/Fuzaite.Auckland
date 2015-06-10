@@ -16,6 +16,7 @@ module.exports ={
 			Script: [
 				'Public/Lib/angular/angular.min.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.min.js',
+				'Public/Lib/angular-bootstrap/ui-bootstrap.min.js',
 				'Public/Lib/semantic-ui/dist/semantic.min.js'
 			]
 		},

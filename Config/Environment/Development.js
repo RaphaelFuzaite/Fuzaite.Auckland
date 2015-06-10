@@ -4,8 +4,8 @@ module.exports ={
 	DB: {
 		URI: 'mongodb://localhost/auckland-dev',
 		Options: {
-			User: '',
-			Pass: ''
+			user: '',
+			pass: ''
 		},
 	},
 	App: {

@@ -2,7 +2,6 @@
   "name": "fuzaite.auckland",
   "version": "0.0.0",
   "description": "Gerenciamento de finanças pessoais compartilhado",
-  "main": "App.js",
   "scripts": {
     "test": "gulp"
   },
@@ -26,15 +25,17 @@
     "express-session": "^1.11.2",
     "glob": "^5.0.10",
     "helmet": "^0.9.1",
-    "jade": "^1.10.0",
     "lodash": "^3.9.3",
     "method-override": "^2.3.3",
     "mongoose": "^4.0.5",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
-    "path": "^0.11.14"
+    "path": "^0.11.14",
+    "swig": "^1.4.2"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-nodemon": "^2.0.3"
   }
 }

@@ -9,7 +9,10 @@ var http 			= require('http'),
 	cookieParser 	= require('cookie-parser'),
 	helmet 			= require('helmet'),
 	passport 		= require('passport'),	
-	mongoStore		= require('connect-mongo'),
+	mongoStore		= require('connect-mongo')
+	({
+		session: session
+	}),
 	consolidate 	= require('consolidate'),
 	Config 			= require('./Config'),
 	path 			= require('path');
@@ -24,9 +27,9 @@ module.exports = function (db) {
 	app.locals.jsFiles = Config.GetJavaScriptAssets();
 	app.locals.cssFiles = Config.GetCSSAssets();
 	
-	app.engine('server.view.html', consolidate[Config.TemplateEngine]);
+	app.engine('html', consolidate[Config.TemplateEngine]);
 	
-	app.set('view engine', 'server.view.html');
+	app.set('view engine', 'html');
 	app.set('views', './App/Views');
 	app.set('showStackError', true);
 	
