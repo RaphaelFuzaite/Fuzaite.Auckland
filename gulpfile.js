@@ -18,8 +18,8 @@ gulp.task('loadConfig', function() {
 });
 
 gulp.task('lint', function () {
-  gulp.src(watchFiles.serverViews.concat(watchFiles.serverJS))
-    .pipe(plugins.jshint())
+  return gulp.src(watchFiles.serverViews.concat(watchFiles.serverJS))
+    .pipe(plugins.jshint());
 })
 
 gulp.task('start', function () {
@@ -29,6 +29,6 @@ gulp.task('start', function () {
   }).on('change', ['lint']);
 });
 
-gulp.task('default', ['loadConfig', 'start'], function() {
+gulp.task('default', ['loadConfig', 'lint', 'start'], function() {
 	
 });

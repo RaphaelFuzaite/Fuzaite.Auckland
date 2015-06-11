@@ -8,7 +8,8 @@ var http 			= require('http'),
 	methodOverride 	= require('method-override'),
 	cookieParser 	= require('cookie-parser'),
 	helmet 			= require('helmet'),
-	passport 		= require('passport'),	
+	passport 		= require('passport'),
+	mongoose		= require('mongoose'),	
 	mongoStore		= require('connect-mongo')
 	({
 		session: session
@@ -64,8 +65,9 @@ module.exports = function (db) {
 	app.use(session({
 		saveUninitialized: true,
 		resave: true,
-		secret: Config.sessionSecret,
+		secret: Config.SessionSecret,
 		store: new mongoStore({
+			mongooseConnection: mongoose.connection,
 			db: db.connection.db,
 			collection: Config.SessionCollection
 		}),
@@ -74,6 +76,15 @@ module.exports = function (db) {
 	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
+	
+	Config.GetGlobbedFiles('./App/Models/**/*.js').forEach(function(modelPath) {
+		require(path.resolve(modelPath));
+	});
+	
+	Config.GetGlobbedFiles('./App/Routes/**/*.js').forEach(function(routePath) {
+		require(path.resolve(routePath))(app);
+	});	
+	
 	app.use(function(err, req, res, next) {
 		if (!err) return next();
 
@@ -90,13 +101,7 @@ module.exports = function (db) {
 		});
 	});	
 	
-	Config.GetGlobbedFiles('./App/Models/**/*.js').forEach(function(modelPath) {
-		require(path.resolve(modelPath));
-	});
-	
-	Config.GetGlobbedFiles('./App/Routes/**/*.js').forEach(function(routePath) {
-		require(path.resolve(routePath))(app);
-	});
+
 	
 	return app;
 	

@@ -14,6 +14,7 @@ module.exports ={
 				'Public/Lib/semantic-ui/dist/semantic.min.css'
 			],
 			Script: [
+				'Public/Lib/jquery/dist/jquery.js',
 				'Public/Lib/angular/angular.min.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.min.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.min.js',

@@ -8,12 +8,22 @@ module.exports = {
 	},
 	Port: process.env.PORT || 3000,
 	TemplateEngine: 'swig',
+	SessionSecret: 'Auckland',
+	SessionColection: 'sessions',
+	SessionCookie: {
+		path: '/',
+		httpOnly: true,
+		secure: false,
+		maxAge: null,
+	},
+	SessionName: 'connect.sid',
 	Assets: {
 		Lib: {
 			Style: [
 				'Public/Lib/semantic-ui/dist/semantic.css'
 			],
 			Script: [
+				'Public/Lib/jquery/dist/jquery.js',
 				'Public/Lib/angular/angular.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.js',
