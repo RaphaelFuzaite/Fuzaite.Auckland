@@ -27,7 +27,7 @@
     "helmet": "^0.9.1",
     "lodash": "^3.9.3",
     "method-override": "^2.3.3",
-    "mongoose": "^3.8.30",
+    "mongoose": "^4.0.5",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
     "path": "^0.11.14",
