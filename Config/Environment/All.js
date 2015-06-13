@@ -31,7 +31,8 @@ module.exports = {
 			]
 		},
 		Style: [
-			'Public/Style/main.css'
+			'Public/Style/*.css',
+			'Public/Modules/*/*.css'
 		],
 		Script: [
 			'Public/Config.js',

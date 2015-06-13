@@ -28,18 +28,50 @@
 </head>
 
 <body class="ng-cloak">
-	<header>
-		<div class="ui fixed inverted main menu">
+	<header class="navbar">
+		<div class="ui fixed inverted main menu bg-mountain-meadow">
 			<div class="container">
-		
+				<div class="icon item">
+					<i class="content icon"></i>
+				</div>				
+				<div class="title item">
+					<strong>Auckland</strong>
+					<p><small>Gerenciador Financeiro</small></p>
+				</div>
 		  	</div>
 		</div>		
 	</header>
-	<section class="content">
+	<div class="main-content">
+		<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt">
+			<div class="item">
+				<div class="profile">
+					<a href="#">
+						<img src="/Images/elliot.jpg">
+						<div class="user-info">
+							<strong class="header">Raphael Fuzaite</strong>
+							<div class="description">
+								<small>Web Developer</small>
+							</div>
+						</div>
+						<i class="right angle icon"></i>
+					</a>
+				</div>
+			</div>
+			
+			<a class="item">
+				<i class="bar chart icon"></i> Dashboard
+			</a>
+			<a class="item">
+				<i class="university icon"></i> Contas
+			</a>
+			<a class="item">
+				<i class="rocket icon"></i> Projetos
+			</a>
+		</aside>
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
-	</section>
+	</div>
 
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}
@@ -48,7 +80,7 @@
 
 	{% if process.env.NODE_ENV === 'Development' %}
 	<!--Livereload script rendered -->
-	<!--script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script-->
+	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
 	{% endif %}
 </body>
 

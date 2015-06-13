@@ -1,0 +1,7 @@
+.ui.input input {
+	width: 100%;
+}
+
+.ui.vertical.menu .item {
+  border-left: 3px solid transparent;
+}

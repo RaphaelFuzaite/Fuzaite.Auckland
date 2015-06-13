@@ -7,7 +7,7 @@ var watchFiles = {
 	serverJS: ['gulpfile.js', 'server.js', 'Config/**/*.js', 'App/**/*.js', '!App/tests/'],
 	clientViews: ['Public/Modules/**Views/**/*.html'],
 	clientJS: ['Public/*.js', 'Public/Modules/**/*.js'],
-	clientCSS: ['Public/Style/*.cs','Public/Modules/**/*.css'],
+	clientCSS: ['Public/Style/*.css','Public/Modules/**/*.css'],
 	allJS: function() {
 		return watchFiles.clientJS.concat(watchFiles.serverJS);
 	},
@@ -19,7 +19,7 @@ var watchFiles = {
 	}
 };
 
-var plugins = require("gulp-load-plugins")({
+var plugins = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*'],
   replaceString: /\bgulp[\-.]/
 });
@@ -38,7 +38,7 @@ gulp.task('jslint', function () {
 
 gulp.task('csslint', function () {
   return gulp.src(watchFiles.allCSS())
-		    .pipe(plugins.csslint())
+		    .pipe(plugins.csslint('.csslintrc'))
 			.pipe(plugins.csslint.reporter())
 			.pipe(plugins.livereload());
 });
