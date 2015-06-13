@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Gerenciamento de finanças pessoais compartilhado",
   "scripts": {
-    "test": "gulp"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,9 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-csslint": "^0.1.5",
     "gulp-jshint": "^1.11.0",
+    "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-nodemon": "^2.0.3"
   }
