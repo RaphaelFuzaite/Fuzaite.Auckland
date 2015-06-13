@@ -258,8 +258,58 @@ header .page-title {
 }
 
 header .page-title h2.ui.header {	
-  padding: 18px 0;
-  margin: 0;
+	padding: 18px 0;
+	margin: 0;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+header .page-info {
+	float: right;
+	cursor: pointer;
+	margin: 32px 0;
+}
+
+header .page-info .date-range {
+	float: left;
+}
+
+header .page-info .date-range > i {
+  font-size: 32px;
   font-weight: 400;
-  line-height: 20px;
+  font-style: normal;
+  line-height: 1;
+}
+
+header .page-info .date-range b {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+header .page-info .date-range b > i {
+  font-size: 11px;
+  font-weight: 600;
+  color: #777;
+  display: block;
+  line-height: 14px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+header .page-info .date-range em {
+  line-height: 30px;
+  vertical-align: top;
+  margin: 0 6px 0 10px;
+}
+
+header .page-info .range .label {
+  margin: 5px 0 0 8px;
+  display: inline-block;
+}
+
+.info-status {
+	float: left;
+	margin: 4px 0px 0px 6px;
 }

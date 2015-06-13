@@ -1,0 +1,29 @@
+<section ng-controller="DashboardController">
+	<header>
+		<div class="page-title">
+			<h2 class="ui header">
+		      Dashboard
+		      <div class="sub header">Resumo de desempenho</div>
+		    </h2>
+		</div>
+		<div class="page-info">
+			<div class="date-range">
+				<i>15</i> 
+				<b><i>Jun</i><i>2015</i></b>
+				<em> - </em>
+				<i>13</i>
+				<b><i>Jul</i><i>2015</i></b>
+			</div>
+			<div class="info-status">
+				<i class="ui green image label">
+					Efetivado
+					<span class="detail">{{ Sumario.Efetivado }}</span>
+				</i>
+				<i class="ui red image label">
+					Pendente
+					<span class="detail">{{ Sumario.Pendente }}</span>
+				</i>
+			</div>
+		</div>
+	</header>
+</section>
