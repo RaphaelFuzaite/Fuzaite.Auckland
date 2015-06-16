@@ -1,0 +1,44 @@
+<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt expandido" ng-show="MenuExpandido">
+	<div class="item">
+		<div class="profile">
+			<a href="#">
+				<img ng-src="/Images/{{ Usuario.Imagem }}">
+				<div class="user-info">
+					<strong class="header">{{ Usuario.Nome }}</strong>
+					<div class="description">
+						<small>{{ Usuario.Descricao }}</small>
+					</div>
+				</div>
+				<i class="right angle icon"></i>
+			</a>
+		</div>
+	</div>
+	
+	<a class="item" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}">
+		<i class="{{ Menu.Class }} icon"></i> {{ Menu.Titulo }}
+	</a>
+</aside>
+<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt contraido" ng-hide="MenuExpandido">
+	<div class="item">
+		<div class="profile">
+			<a href="#">
+				<img ng-src="/Images/{{ Usuario.Imagem }}">
+				<div class="user-info">
+					<strong class="header">{{ Usuario.Nome }}</strong>
+					<div class="description">
+						<small>{{ Usuario.Descricao }}</small>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	
+	<a class="item" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}">
+		<div class="ui icon header">
+			<i class="{{ Menu.Class }} icon"></i> 
+			<div class="content">
+				{{ Menu.Titulo }}
+			</div>
+		</div>	
+	</a>
+</aside>

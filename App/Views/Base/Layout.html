@@ -29,45 +29,10 @@
 
 <body class="ng-cloak">
 	<header class="navbar">
-		<div class="ui fixed inverted main menu bg-mountain-meadow">
-			<div class="container">
-				<div class="icon item">
-					<i class="content icon"></i>
-				</div>				
-				<div class="title item">
-					<strong>Auckland</strong>
-					<p><small>Gerenciador Financeiro</small></p>
-				</div>
-		  	</div>
-		</div>		
+		<div header></div>
 	</header>
 	<div class="main-content">
-		<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt">
-			<div class="item">
-				<div class="profile">
-					<a href="#">
-						<img src="/Images/elliot.jpg">
-						<div class="user-info">
-							<strong class="header">Raphael Fuzaite</strong>
-							<div class="description">
-								<small>Web Developer</small>
-							</div>
-						</div>
-						<i class="right angle icon"></i>
-					</a>
-				</div>
-			</div>
-			
-			<a class="item" href="/#!/">
-				<i class="bar chart icon"></i> Dashboard
-			</a>
-			<a class="item" href="/#!/Contas">
-				<i class="university icon"></i> Contas
-			</a>
-			<a class="item" href="/#!/Projetos">
-				<i class="rocket icon"></i> Projetos
-			</a>
-		</aside>
+		<div navigation-bar></div>
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>

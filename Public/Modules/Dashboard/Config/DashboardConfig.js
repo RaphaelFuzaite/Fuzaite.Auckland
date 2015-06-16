@@ -4,7 +4,7 @@ angular.module('Dashboard').config(['$stateProvider', '$urlRouterProvider', func
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider.state('dashboard', {
-			url: '/',
+			url: '/Dashboard',
 			templateUrl: 'Modules/Dashboard/Views/Home.html'
 		});
 	}
