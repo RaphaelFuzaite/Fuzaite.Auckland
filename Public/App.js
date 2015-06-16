@@ -7,5 +7,5 @@ angular.module(ApplicationConfiguration.ModuleName).config(['$locationProvider',
 }]);
 
 angular.element(document).ready(function() {
-      angular.bootstrap(document, [ApplicationConfiguration.ModuleName]);
+	angular.bootstrap(document, [ApplicationConfiguration.ModuleName]);
 });

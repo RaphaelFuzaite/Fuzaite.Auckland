@@ -27,7 +27,8 @@ module.exports = {
 				'Public/Lib/angular/angular.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.js',
-				'Public/Lib/semantic-ui/dist/semantic.js'
+				'Public/Lib/semantic-ui/dist/semantic.js',
+				'Public/Lib/Init.js'
 			]
 		},
 		Style: [

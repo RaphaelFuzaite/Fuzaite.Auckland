@@ -13,6 +13,18 @@ header.navbar .container div.icon .menu-content:hover {
 	border: 1px solid #FFF;
 }
 
+header.navbar .container div.right.menu .item {
+	padding: 19px;
+}
+
+header.navbar .container div.right.menu .buttons {
+	padding: 8px;
+}
+
+header.navbar .container div.right.menu {
+	height: 53px;
+}
+
 .main-content > aside.sidebar.menu {
 	margin-top: 53px !important;
 	width: 240px;
@@ -26,6 +38,10 @@ header.navbar .container div.icon .menu-content:hover {
 
 .main-content > section.container {
 	position: relative;
+	margin: 0 25px 0 25px;
+}
+
+.main-content > aside.sidebar + section.container {
 	margin: 0 25px 0 265px;
 }
 

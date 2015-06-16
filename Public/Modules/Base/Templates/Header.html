@@ -9,5 +9,25 @@
 			<strong>Auckland</strong>
 			<p><small>Gerenciador Financeiro</small></p>
 		</div>
+		<div class="right menu">
+			<div class="ui buttons" ng-hide="Authentication.user">
+				<a href="/#!/Login" class="ui purple button">Já sou usuário</a>
+				<div class="or"></div>
+				<a href="/#!/Cadastrar" class="ui red button">Criar conta</a>
+			</div>
+			<div class="ui dropdown item" ng-show="Authentication.user">
+				Raphael Fuzaite
+				<i class="dropdown icon"></i>
+				<div class="menu">
+					<div class="header">Usuário</div>
+					<a href="#" class="item">Perfil</a>
+					<a href="#" class="item">Mensagens</a>
+					<div class="divider"></div>
+					<div class="header">Gerenciar</div>
+					<a href="#" class="item">Configurações</a>
+					<a href="#" class="item">Sair</a>
+				</div>
+			</div>		
+		</div>
   	</div>
 </div>

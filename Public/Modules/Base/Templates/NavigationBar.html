@@ -1,4 +1,4 @@
-<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }">
+<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }" ng-if="Menu.ShouldRender(Authentication.user);">
 	<div class="item">
 		<div class="profile">
 			<a href="#">

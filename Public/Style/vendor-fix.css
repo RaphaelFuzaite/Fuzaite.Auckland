@@ -5,3 +5,7 @@
 .ui.vertical.menu .item {
   border-left: 3px solid transparent;
 }
+
+.ui.buttons .or:before {
+	content: "ou";	
+}
