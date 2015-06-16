@@ -3,6 +3,7 @@
 angular.module('Base').directive('navigationBar', ['Menus', function(Menus) {
 		return {
 			restrict: 'A',
+			replace: true,
 			templateUrl: '/Modules/Base/Templates/NavigationBar.html',
 			controller: ['$scope', function ($scope) {
 

@@ -4,11 +4,17 @@ angular.module('Base').service('Menus', [function () {
 	
 	this.DefaultRoles = ['*'];
 	this.NavigationBar = {};
-	this.Modo = {
-		Expandido: true,
-		Toggle: function () {
-			$scope.Modo.Expandido = !$scope.Modo.Expandido;
-		}
+
+	this.ChangeMenuState = function(menuId) {
+		this.ValidateMenuExistance(menuId);
+		
+		this.NavigationBar[menuId].Modo.Contraido = !this.NavigationBar[menuId].Modo.Contraido;
+	};
+	
+	this.GetMenuState = function(menuId) {
+		this.ValidateMenuExistance(menuId);
+		
+		return this.NavigationBar[menuId].Modo;
 	};
 
 	var ShouldRender = function(user) {
@@ -54,7 +60,10 @@ angular.module('Base').service('Menus', [function () {
 			Publico: publico || false,
 			Roles: roles || this.DefaultRoles,
 			Itens: [],
-			ShouldRender: ShouldRender
+			ShouldRender: ShouldRender,
+			Modo: {
+				Contraido: false
+			}
 		};
 
 		return this.NavigationBar[menuId];
