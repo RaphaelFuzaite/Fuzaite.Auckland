@@ -12,7 +12,7 @@ var ApplicationConfiguration = (function(){
 		ModuleName: 				applicationModuleName,
 		ModuleNameDependencies: 	['ui.router', 'ui.bootstrap'],
 		RegisterModule: 			registerModule,
-		//VendorsInitializer:			initVendors
+		VendorsInitializer:			initVendors
 	};
 	
 })();
