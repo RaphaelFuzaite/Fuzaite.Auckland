@@ -3,7 +3,7 @@ angular.module('Dashboard').config(['$stateProvider', '$urlRouterProvider', func
 		
 		$urlRouterProvider.otherwise('/');
 
-		$stateProvider.state('dashboard', {
+		$stateProvider.state('Dashboard', {
 			url: '/Dashboard',
 			templateUrl: 'Modules/Dashboard/Views/Home.html'
 		});
