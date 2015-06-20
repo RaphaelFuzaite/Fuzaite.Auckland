@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash'),
-	errorHandler = require('../ErrorsController.js'),
+	errorHandler = require('../ErrorController.js'),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
 	User = mongoose.model('User');

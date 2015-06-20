@@ -6,12 +6,12 @@ module.exports = function(app) {
 	var User = require('../../App/Controllers/UserController');
 
 	app.route('/User/Me').get(User.Me);
-	app.route('/User').put(User.Mpdate);
+	app.route('/User').put(User.Update);
 	app.route('/User/Accounts');
 
-	app.route('/User/Password').post(User.MhangePassword);
-	app.route('/Auth/Forgot').post(User.Morgot);
-	app.route('/Auth/Reset/:token').get(User.validateResetToken);
+	app.route('/User/Password').post(User.ChangePassword);
+	app.route('/Auth/Forgot').post(User.Forgot);
+	app.route('/Auth/Reset/:token').get(User.ValidateResetToken);
 	app.route('/Auth/Reset/:token').post(User.Reset);
 
 	app.route('/Auth/Signup').post(User.Signup);

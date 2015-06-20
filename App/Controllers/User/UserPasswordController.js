@@ -10,7 +10,7 @@ var _ = require('lodash'),
 	async = require('async'),
 	crypto = require('crypto');
 
-var smtpTransport = nodemailer.createTransport(config.mailer.options);
+//var smtpTransport = nodemailer.createTransport(config.mailer.options);
 
 exports.Forgot = function(req, res, next) {
 	async.waterfall([
@@ -65,7 +65,7 @@ exports.Forgot = function(req, res, next) {
 				subject: 'Redefinição de senha',
 				html: emailHTML
 			};
-			smtpTransport.sendMail(mailOptions, function(err) {
+			/*smtpTransport.sendMail(mailOptions, function(err) {
 				if (!err) {
 					res.send({
 						message: 'Um email foi enviado para ' + user.email + ' contendo mais instruções.'
@@ -77,7 +77,7 @@ exports.Forgot = function(req, res, next) {
 				}
 
 				done(err);
-			});
+			});*/
 		}
 	], function(err) {
 		if (err) return next(err);
@@ -163,9 +163,9 @@ exports.Reset = function(req, res, next) {
 				html: emailHTML
 			};
 
-			smtpTransport.sendMail(mailOptions, function(err) {
+			/*smtpTransport.sendMail(mailOptions, function(err) {
 				done(err, 'done');
-			});
+			});*/
 		}
 	], function(err) {
 		if (err) return next(err);
