@@ -13,19 +13,19 @@ var validateLocalStrategyPassword = function(password) {
 };
 
 var UserSchema = new Schema({
-	firstName: {
+	primeiroNome: {
 		type: String,
 		trim: true,
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Por favor qual é o seu primeiro nome?']
 	},
-	lastName: {
+	ultimoNome: {
 		type: String,
 		trim: true,
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Nos diga o seu último nome?']
 	},
-	displayName: {
+	nomeCompleto: {
 		type: String,
 		trim: true
 	},
@@ -36,13 +36,13 @@ var UserSchema = new Schema({
 		validate: [validateLocalStrategyProperty, 'Um email para contato, por favor'],
 		match: [/.+\@.+\..+/, 'Mas precisamos de um email válido']
 	},
-	username: {
+	nomeDeUsuario: {
 		type: String,
 		unique: 'Já temos um usuário com esse nome, tente outro',
 		required: 'Como deseja ser identificado?',
 		trim: true
 	},
-	password: {
+	senha: {
 		type: String,
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Tente uma senha mais complexa']
@@ -61,17 +61,17 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
-	updated: {
+	atualizacao: {
 		type: Date
 	},
-	created: {
+	criacao: {
 		type: Date,
 		default: Date.now
 	},
-	resetPasswordToken: {
+	tokenDeRedefinicaoDeSenha: {
 		type: String
 	},
-	resetPasswordExpires: {
+	dataLimiteParaRedefinicaoDeSenha: {
 		type: Date
 	}
 });

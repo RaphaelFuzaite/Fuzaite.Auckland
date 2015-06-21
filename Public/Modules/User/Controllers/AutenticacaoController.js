@@ -4,15 +4,25 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 
-		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/');
+		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.authentication.Model));
+
+		if ($scope.authentication.User) $location.path('/');
+
+		$scope.isInvalid = function() {
+    		return !Form.form('validate form');
+  		};
+
+  		$scope.Register = function() {
+  			if (!this.isInvalid()) {
+  				console.log("INVÁLIDO");
+    		} else {
+    			console.log("VÁLIDO");
+    		}
+  		}
 
 		$scope.signup = function() {
-			$http.post('/auth/signup', $scope.credentials).success(function(response) {
-				// If successful we assign the response to the global user model
-				$scope.authentication.user = response;
-
-				// And redirect to the index page
+			$http.post('/Auth/Signup', $scope.Credenciais).success(function(response) {
+				$scope.authentication.User = response;
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;
@@ -20,11 +30,8 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 		};
 
 		$scope.signin = function() {
-			$http.post('/auth/signin', $scope.credentials).success(function(response) {
-				// If successful we assign the response to the global user model
+			$http.post('/Auth/Signin', $scope.Credentials).success(function(response) {
 				$scope.authentication.user = response;
-
-				// And redirect to the index page
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;

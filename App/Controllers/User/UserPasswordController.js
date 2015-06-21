@@ -6,14 +6,14 @@ var _ = require('lodash'),
 	passport = require('passport'),
 	User = mongoose.model('User'),
 	config = require('../../../Config/Config'),
-	nodemailer = require('nodemailer'),
-	async = require('async'),
+	//nodemailer = require('nodemailer'),
+	//async = require('async'),
 	crypto = require('crypto');
 
 //var smtpTransport = nodemailer.createTransport(config.mailer.options);
 
 exports.Forgot = function(req, res, next) {
-	async.waterfall([
+	/*async.waterfall([
 		function(done) {
 			crypto.randomBytes(20, function(err, buffer) {
 				var token = buffer.toString('hex');
@@ -65,23 +65,23 @@ exports.Forgot = function(req, res, next) {
 				subject: 'Redefinição de senha',
 				html: emailHTML
 			};
-			/*smtpTransport.sendMail(mailOptions, function(err) {
-				if (!err) {
-					res.send({
-						message: 'Um email foi enviado para ' + user.email + ' contendo mais instruções.'
-					});
-				} else {
-					return res.status(400).send({
-						message: 'Tivemos um problema ao enviar o email.'
-					});
-				}
+			//smtpTransport.sendMail(mailOptions, function(err) {
+			//	if (!err) {
+			//		res.send({
+			//			message: 'Um email foi enviado para ' + user.email + ' contendo mais instruções.'
+			//		});
+			//	} else {
+			//		return res.status(400).send({
+			//			message: 'Tivemos um problema ao enviar o email.'
+			//		});
+			//	}
 
-				done(err);
-			});*/
+			//	done(err);
+			//});
 		}
 	], function(err) {
 		if (err) return next(err);
-	});
+	});*/
 };
 
 exports.ValidateResetToken = function(req, res) {
@@ -102,7 +102,7 @@ exports.ValidateResetToken = function(req, res) {
 exports.Reset = function(req, res, next) {
 	var passwordDetails = req.body;
 
-	async.waterfall([
+	/*async.waterfall([
 
 		function(done) {
 			User.findOne({
@@ -163,13 +163,13 @@ exports.Reset = function(req, res, next) {
 				html: emailHTML
 			};
 
-			/*smtpTransport.sendMail(mailOptions, function(err) {
-				done(err, 'done');
-			});*/
+			//smtpTransport.sendMail(mailOptions, function(err) {
+			//	done(err, 'done');
+			//});
 		}
 	], function(err) {
 		if (err) return next(err);
-	});
+	});*/
 };
 
 exports.ChangePassword = function(req, res) {

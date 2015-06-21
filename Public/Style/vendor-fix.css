@@ -9,3 +9,7 @@
 .ui.buttons .or:before {
 	content: "ou";	
 }
+
+html, body {
+	height: auto;
+}
