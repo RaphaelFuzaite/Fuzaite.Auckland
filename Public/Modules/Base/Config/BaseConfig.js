@@ -10,7 +10,7 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
 			templateUrl: 'Modules/Base/Views/BaseHome.html'
 		});
 	}
-/*]).config(['$httpProvider',
+]).config(['$httpProvider', 'Errors',
 	function($httpProvider) {
 		
 		$httpProvider.interceptors.push(['$q', '$location', 'Authentication',
@@ -29,6 +29,8 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
 								// Add unauthorized behaviour 
 								break;
 						}
+						
+						Errors.CompleteDisclaimer(rejection.status, rejection.data);
 
 						return $q.reject(rejection);
 					}
@@ -36,4 +38,4 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
 			}
 		]);
 	}
-*/]);
+]);
