@@ -12,8 +12,8 @@ exports.Signup = function(req, res) {
 	var user = new User(req.body);
 	var message = null;
 
-	user.provider = 'local';
-	user.displayName = user.firstName + ' ' + user.lastName;
+	user.Provider = 'local';
+	user.NomeCompleto = user.PrimeiroNome + ' ' + user.UltimoNome;
 
 	user.save(function(err) {
 		if (err) {
@@ -21,8 +21,8 @@ exports.Signup = function(req, res) {
 				message: errorHandler.GetErrorMessage(err)
 			});
 		} else {
-			user.password = undefined;
-			user.salt = undefined;
+			user.Senha = undefined;
+			user.Salt = undefined;
 
 			req.login(user, function(err) {
 				if (err) {
@@ -40,8 +40,8 @@ exports.Signin = function(req, res, next) {
 		if (err || !user) {
 			res.status(400).send(info);
 		} else {
-			user.password = undefined;
-			user.salt = undefined;
+			user.Senha = undefined;
+			user.Salt = undefined;
 
 			req.login(user, function(err) {
 				if (err) {

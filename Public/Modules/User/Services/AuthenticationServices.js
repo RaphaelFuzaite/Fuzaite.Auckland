@@ -34,6 +34,24 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 					type: 'email',
 					prompt: "Email inválido"
 				}]
+			},
+			senha: {
+				identifier: 'Senha',
+				rules: [{
+					type: 'empty',
+					prompt: "Campo obrigatório"
+				},
+				{
+					type: 'length[4]',
+					prompt: "A senha deve conter ao menos 4 caracteres"
+				}]
+			},
+			confirmacaoDeSenha: {
+				identifier: 'ConfirmacaoDeSenha',
+				rules: [{
+					type: 'match[Senha]',
+					prompt: "As senhas não combinam"
+				}]
 			}
 		};
 	})();

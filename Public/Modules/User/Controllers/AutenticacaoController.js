@@ -12,24 +12,20 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
     		return !Form.form('validate form');
   		};
 
-  		$scope.Register = function() {
-  			if (!this.isInvalid()) {
-  				console.log("INVÁLIDO");
-    		} else {
-    			console.log("VÁLIDO");
-    		}
-  		}
-
-		$scope.signup = function() {
+		$scope.Signup = function() {
+			if (this.isInvalid())
+				return false;
+				
 			$http.post('/Auth/Signup', $scope.Credenciais).success(function(response) {
+				console.log(response);
 				$scope.authentication.User = response;
-				$location.path('/');
+				//$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
 		};
 
-		$scope.signin = function() {
+		$scope.Signin = function() {
 			$http.post('/Auth/Signin', $scope.Credentials).success(function(response) {
 				$scope.authentication.user = response;
 				$location.path('/');

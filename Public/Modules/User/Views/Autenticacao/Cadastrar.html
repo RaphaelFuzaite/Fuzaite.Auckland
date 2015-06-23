@@ -7,7 +7,7 @@
           <label>Primeiro Nome</label>
           <div class="ui icon input">
               <input type="text" placeholder="Primeiro Nome" id="PrimeiroNome" name="PrimeiroNome" ng-model="Credenciais.PrimeiroNome">
-              <i class="user icon"></i>
+              <i class="browser icon"></i>
             </div>
         </div>
 
@@ -15,7 +15,7 @@
           <label>Último Nome</label>
           <div class="ui icon input">
               <input type="text" placeholder="Último Nome" id="UltimoNome" name="UltimoNome" ng-model="Credenciais.UltimoNome">
-              <i class="user icon"></i>
+              <i class="browser icon"></i>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
         <div class="six wide field">
           <label>Usuário</label>
           <div class="ui icon input">
-              <input type="text" placeholder="Usuário">
+              <input type="text" placeholder="Usuário" id="NomeDeUsuario" name="NomeDeUsuario" ng-model="Credenciais.NomeDeUsuario">
               <i class="user icon"></i>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="six wide field">
           <label>Senha</label>
           <div class="ui icon input">
-              <input type="password" placeholder="Senha">
+              <input type="password" placeholder="Senha" id="Senha" name="Senha" ng-model="Credenciais.Senha">
               <i class="lock icon"></i>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <div class="six wide field">
           <label>Confirme a Senha</label>
           <div class="ui icon input">
-              <input type="password" placeholder="Senha">
+              <input type="password" placeholder="Confirmação de Senha" id="ConfirmacaoDeSenha" name="ConfirmacaoDeSenha" ng-model="Credenciais.ConfirmacaoDeSenha">
               <i class="lock icon"></i>
             </div>
         </div>
@@ -65,7 +65,7 @@
             <label>Inicializar carteira padrão</label>
           </div>
         </div>
-        <div class="ui right floated small teal labeled icon button" ng-click="Register()">
+        <div class="ui right floated small teal labeled icon button" ng-click="Signup()">
             <i class="save icon"></i> Salvar
         </div>
         <div class="ui right floated small red labeled icon button">

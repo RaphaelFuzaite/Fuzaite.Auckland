@@ -5,96 +5,96 @@ var mongoose = require('mongoose'),
 	crypto = require('crypto');
 
 var validateLocalStrategyProperty = function(property) {
-	return ((this.provider !== 'local' && !this.updated) || property.length);
+	return ((this.Provider !== 'local' && !this.Atualizacao) || property.length);
 };
 
 var validateLocalStrategyPassword = function(password) {
-	return (this.provider !== 'local' || (password && password.length > 6));
+	return (this.Provider !== 'local' || (password && password.length > 6));
 };
 
 var UserSchema = new Schema({
-	primeiroNome: {
+	PrimeiroNome: {
 		type: String,
 		trim: true,
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Por favor qual é o seu primeiro nome?']
 	},
-	ultimoNome: {
+	UltimoNome: {
 		type: String,
 		trim: true,
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Nos diga o seu último nome?']
 	},
-	nomeCompleto: {
+	NomeCompleto: {
 		type: String,
 		trim: true
 	},
-	email: {
+	Email: {
 		type: String,
 		trim: true,
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Um email para contato, por favor'],
 		match: [/.+\@.+\..+/, 'Mas precisamos de um email válido']
 	},
-	nomeDeUsuario: {
+	NomeDeUsuario: {
 		type: String,
 		unique: 'Já temos um usuário com esse nome, tente outro',
 		required: 'Como deseja ser identificado?',
 		trim: true
 	},
-	senha: {
+	Senha: {
 		type: String,
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Tente uma senha mais complexa']
 	},
-	salt: {
+	Salt: {
 		type: String
 	},
-	provider: {
+	Provider: {
 		type: String,
-		required: 'Provider is required'
+		required: 'Provider é obrigatório'
 	},
-	roles: {
+	Roles: {
 		type: [{
 			type: String,
 			enum: ['user', 'admin', 'owner', 'shared']
 		}],
 		default: ['user']
 	},
-	atualizacao: {
+	Atualizacao: {
 		type: Date
 	},
-	criacao: {
+	Criacao: {
 		type: Date,
 		default: Date.now
 	},
-	tokenDeRedefinicaoDeSenha: {
+	TokenDeRedefinicaoDeSenha: {
 		type: String
 	},
-	dataLimiteParaRedefinicaoDeSenha: {
+	DataLimiteParaRedefinicaoDeSenha: {
 		type: Date
 	}
 });
 
 UserSchema.pre('save', function(next) {
-	if (this.password && this.password.length > 6) {
-		this.salt = crypto.randomBytes(16).toString('base64');
-		this.password = this.HashPassword(this.password);
+	if (this.Senha && this.Senha.length > 6) {
+		this.Salt = crypto.randomBytes(16).toString('base64');
+		this.Senha = this.HashPassword(this.Senha);
 	}
 
 	next();
 });
 
 UserSchema.methods.HashPassword = function(password) {
-	if (this.salt && password) {
-		return crypto.pbkdf2Sync(password, new Buffer(this.salt, 'base64'), 10000, 64).toString('base64');
+	if (this.Salt && password) {
+		return crypto.pbkdf2Sync(password, new Buffer(this.Salt, 'base64'), 10000, 64).toString('base64');
 	} else {
 		return password;
 	}
 };
 
 UserSchema.methods.Authenticate = function(password) {
-	return this.password === this.HashPassword(password);
+	return this.Senha === this.HashPassword(password);
 };
 
 UserSchema.statics.FindUniqueUsername = function(username, suffix, callback) {
@@ -102,7 +102,7 @@ UserSchema.statics.FindUniqueUsername = function(username, suffix, callback) {
 	var possibleUsername = username + (suffix || '');
 
 	_this.findOne({
-		username: possibleUsername
+		NomeDeUsuario: possibleUsername
 	}, function(err, user) {
 		if (!err) {
 			if (!user) {
