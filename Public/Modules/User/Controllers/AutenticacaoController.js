@@ -13,8 +13,8 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
   		};
 
 		$scope.Signup = function() {
-			if (this.isInvalid())
-				return false;
+			//if (this.isInvalid())
+			//	return false;
 				
 			$http.post('/Auth/Signup', $scope.Credenciais).success(function(response) {
 				console.log(response);

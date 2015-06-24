@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
+angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider.
@@ -10,11 +9,9 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
 			templateUrl: 'Modules/Base/Views/BaseHome.html'
 		});
 	}
-]).config(['$httpProvider', 'Errors',
-	function($httpProvider) {
-		
-		$httpProvider.interceptors.push(['$q', '$location', 'Authentication',
-			function($q, $location, Authentication) {
+]).config(['$httpProvider', function($httpProvider) {
+		$httpProvider.interceptors.push(['$q', '$location', 'Authentication', 'Messaging',
+			function($q, $location, Authentication, Messaging) {
 				return {
 					responseError: function(rejection) {
 						switch (rejection.status) {
@@ -30,7 +27,7 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider',
 								break;
 						}
 						
-						Errors.CompleteDisclaimer(rejection.status, rejection.data);
+						Messaging.CompleteDisclaimer(rejection.status, rejection.data);
 
 						return $q.reject(rejection);
 					}
