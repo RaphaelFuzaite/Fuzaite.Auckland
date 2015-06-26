@@ -215,7 +215,6 @@ header .page-title h2.ui.header {
 header .page-info {
 	float: right;
 	cursor: pointer;
-	margin: 32px 0;
 }
 
 header .page-info .date-range {

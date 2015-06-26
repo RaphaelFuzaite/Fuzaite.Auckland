@@ -62,5 +62,5 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 	authentication.User = { User: $window.user };
 	authentication.Model = model;
 	
-	return { User: $window.user };
+	return { User: $window.User };
 }]);

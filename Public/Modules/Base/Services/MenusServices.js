@@ -19,7 +19,7 @@ angular.module('Base').service('Menus', [function () {
 
 	var ShouldRender = function(user) {
 		if (user) {
-			if (this.Roles.indexOf('*')) {
+			if (!!~this.Roles.indexOf('*')) {
 				return true;
 			} else {
 				for (var userRoleIndex in user.Roles) {
