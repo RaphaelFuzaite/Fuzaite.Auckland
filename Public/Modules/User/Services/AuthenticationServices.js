@@ -4,10 +4,6 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 
 	var authentication = {};
 
-	var auth = {
-		User: $window.user
-	};
-
 	var model = (function() {
 		return {
 			primeiroNome: {
@@ -35,6 +31,13 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 					prompt: "Email inválido"
 				}]
 			},
+			nomeDeUsuario: {
+				identifier: 'NomeDeUsuario',
+				rules: [{
+					type: 'empty',
+					prompt: "Campo obrigatório"
+				}]
+			},			
 			senha: {
 				identifier: 'Senha',
 				rules: [{
@@ -56,8 +59,8 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 		};
 	})();
 
-	authentication.Auth = auth;
+	authentication.User = { User: $window.user };
 	authentication.Model = model;
 	
-	return authentication;
+	return { User: $window.user };
 }]);

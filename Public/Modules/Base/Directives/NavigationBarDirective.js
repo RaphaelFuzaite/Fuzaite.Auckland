@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('Base').directive('navigationBar', ['Menus', function(Menus) {
+angular.module('Base').directive('navigationBar', ['Authentication','Menus', function(Authentication, Menus) {
 		return {
 			restrict: 'A',
 			replace: true,
 			templateUrl: '/Modules/Base/Templates/NavigationBar.html',
 			controller: ['$scope', function ($scope) {
 				
-				$scope.Authentication = {};
+				$scope.Authentication = Authentication;
 
 				$scope.Usuario = {
 					Nome: "Raphael Fuzaite",

@@ -6,20 +6,20 @@
         <div class="field">
           <label>Usuário</label>
           <div class="ui icon input">
-              <input type="text" placeholder="Usuário">
+              <input type="text" ng-model="Credenciais.NomeDeUsuario" placeholder="Usuário" name="NomeDeUsuario" id="NomeDeUsuario">
               <i class="user icon"></i>
             </div>
         </div>
         <div class="field">
           <label>Senha</label>
           <div class="ui icon input">
-              <input type="password" placeholder="Senha">
+              <input type="password" ng-model="Credenciais.Senha" placeholder="Senha" name="Senha" id="Senha">
               <i class="lock icon"></i>
             </div>
         </div>
       </div>
       <div class="ui bottom attached label"> <a href="/#!/EsqueciASenha">Esqueceu a senha?</a></div>
-      <div class="ui right floated small teal labeled icon button">
+      <div class="ui right floated small teal labeled icon button" ng-click="Signin()">
           <i class="power icon"></i> Entrar
       </div>
     </div>

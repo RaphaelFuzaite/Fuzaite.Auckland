@@ -9,7 +9,7 @@ var validateLocalStrategyProperty = function(property) {
 };
 
 var validateLocalStrategyPassword = function(password) {
-	return (this.Provider !== 'local' || (password && password.length > 6));
+	return (this.Provider !== 'local' || (password && password.length >= 4));
 };
 
 var UserSchema = new Schema({
@@ -62,7 +62,8 @@ var UserSchema = new Schema({
 		default: ['user']
 	},
 	Atualizacao: {
-		type: Date
+		type: Date,
+		default: Date.now
 	},
 	Criacao: {
 		type: Date,
@@ -77,7 +78,7 @@ var UserSchema = new Schema({
 });
 
 UserSchema.pre('save', function(next) {
-	if (this.Senha && this.Senha.length > 6) {
+	if (this.Senha && this.Senha.length >= 4) {
 		this.Salt = crypto.randomBytes(16).toString('base64');
 		this.Senha = this.HashPassword(this.Senha);
 	}

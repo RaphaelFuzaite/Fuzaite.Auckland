@@ -17,6 +17,8 @@ mongoose.connection.on('error', function(err) {
 
 var app = require('./Config/Express')(db);
 
+require('./Config/Passport')();
+
 app.listen(config.Port);
 
 exports = module.exports = app;
