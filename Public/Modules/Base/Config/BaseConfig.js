@@ -17,7 +17,7 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 						switch (rejection.status) {
 							case 401:
 								// Deauthenticate the global user
-								Authentication.User = null;
+								Authentication.RemoveUser();
 
 								// Redirect to signin page
 								$location.path('Acessar');
@@ -35,4 +35,6 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 			}
 		]);
 	}
-]);
+]).run(['Authentication', function (Authentication) {
+    Authentication.FetchUser();
+}]);

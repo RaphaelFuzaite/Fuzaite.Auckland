@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('User').factory('Authentication', ['$window', function($window) {
+angular.module('User').factory('Authentication', ['localStorageService', function(localStorageService) {
 
 	var authentication = {};
 
@@ -58,9 +58,29 @@ angular.module('User').factory('Authentication', ['$window', function($window) {
 			}
 		};
 	})();
-
-	authentication.User = { User: $window.user };
+	
+	var storagePrefix = 'fAuck';
+	var storageDefinitions = {
+		User: storagePrefix + 'User'
+	};
+	
+	function GetUser() {
+		authentication.User = localStorageService.get(storageDefinitions.User);
+	}
+	
+	authentication.FetchUser = function (user) {
+		if (!angular.isUndefined(user)) {
+			localStorageService.set(storageDefinitions.User, user);
+		}
+		GetUser();
+	};
+	
+	authentication.RemoveUser = function () {
+		localStorageService.remove(storageDefinitions.User);
+		GetUser();
+	};
+	
 	authentication.Model = model;
 	
-	return { User: $window.User };
+	return authentication;
 }]);

@@ -14,7 +14,7 @@
 		</div>
 	</div>
 	
-	<a class="item" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}">
+	<a class="item popup" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}" data-content="{{ Menu.Titulo }}" data-position="right center">
 		<i class="{{ Menu.Class }} icon"></i> <span>{{ Menu.Titulo }}</span>
 	</a>
 </aside>

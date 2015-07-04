@@ -1,0 +1,21 @@
+<div class="ui modal {{ Modal.Tamanho }}">
+  <div class="header">  
+    {{ Modal.Titulo | uppercase }}
+  </div>
+  <div class="content">
+    <div class="ui" ng-bind-html="Modal.Conteudo | rawHtml"></div>
+  </div>
+  <div class="actions">
+    <div class="ui button {{ item.Classes }}" ng-repeat="item in Modal.Acoes">
+      {{ item.Texto }}
+      <i class="icon {{ item.Icone }}" ng-if="item.Icone"></i>
+    </div>
+    <!--div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div-->
+  </div>
+</div>

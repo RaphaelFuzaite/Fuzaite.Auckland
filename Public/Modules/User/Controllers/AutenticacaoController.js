@@ -4,12 +4,12 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 	function($scope, $http, $location, Authentication) {
 		$scope.Authentication = Authentication;
 
-		//var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.Authentication.Model));
+		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.Authentication.Model));
 
 		if ($scope.Authentication.User) $location.path('/');
 
 		$scope.isInvalid = function() {
-    		return false//!Form.form('validate form');
+    		return !Form.form('validate form');
   		};
 
 		$scope.Signup = function() {
@@ -17,7 +17,7 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 				return false;
 				
 			$http.post('/Auth/Signup', $scope.Credenciais).success(function(response) {
-				$scope.Authentication.User = response;
+				$scope.Authentication.FetchUser(response);
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;
@@ -29,7 +29,7 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 				return false;
 
 			$http.post('/Auth/Signin', $scope.Credenciais).success(function(response) {
-				$scope.Authentication.User = response;
+				$scope.Authentication.FetchUser(response);
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;

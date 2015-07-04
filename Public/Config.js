@@ -10,7 +10,7 @@ var ApplicationConfiguration = (function(){
 	
 	return {
 		ModuleName: 				applicationModuleName,
-		ModuleNameDependencies: 	['ui.router', 'ui.bootstrap', 'ngAnimate'],
+		ModuleNameDependencies: 	['ui.router', 'ui.bootstrap', 'ngAnimate', 'LocalStorageModule'],
 		RegisterModule: 			registerModule,
 		VendorsInitializer:			initVendors()
 	};

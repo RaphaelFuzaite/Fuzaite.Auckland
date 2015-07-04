@@ -36,15 +36,11 @@
 	</div>
 	<div class="main-content">
 		<div navigation-bar></div>
-		<section class="container">
+		<section class="container" ng-cloak>
 			{% block content %}{% endblock %}
 		</section>
+		<div modal></div>
 	</div>
-	
-	<!--Embedding The User Object-->
-	<script type="text/javascript">
-		var User = {{ user | json | safe }};
-	</script>
 
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}

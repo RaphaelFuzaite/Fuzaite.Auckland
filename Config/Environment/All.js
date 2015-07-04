@@ -28,6 +28,7 @@ module.exports = {
 				'Public/Lib/angular-ui-router/release/angular-ui-router.js',
 				'Public/Lib/angular-animate/angular-animate.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.js',
+				'Public/Lib/angular-local-storage/dist/angular-local-storage.js',
 				'Public/Lib/semantic-ui/dist/semantic.js',
 				'Public/Lib/Init.js'
 			]

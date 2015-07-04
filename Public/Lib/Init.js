@@ -14,9 +14,16 @@ var initVendors = (function () {
 		Layout: {
 			Element: function() {
 				$('.ui.dropdown').dropdown();
+				$('.popup').popup({
+		          transition: 'scale'
+		        });
 				$('.message .close').on('click', function() {
   					$(this).closest('.message').fadeOut();
 				});
+				$('.ui.modal').modal({
+				    blurring: true,
+					closeable: false,
+		  		}).modal('attach events', '.modal-open.button', 'show');
 			}
 		}
 	};
