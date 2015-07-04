@@ -3,10 +3,10 @@
     {{ Modal.Titulo | uppercase }}
   </div>
   <div class="content">
-    <div class="ui" ng-bind-html="Modal.Conteudo | rawHtml"></div>
+    <div class="ui" modal-content></div>
   </div>
   <div class="actions">
-    <div class="ui button {{ item.Classes }}" ng-repeat="item in Modal.Acoes">
+    <div class="ui button {{ item.Classes }}" ng-repeat="item in Modal.Acoes" ng-click="item.Click()">
       {{ item.Texto }}
       <i class="icon {{ item.Icone }}" ng-if="item.Icone"></i>
     </div>

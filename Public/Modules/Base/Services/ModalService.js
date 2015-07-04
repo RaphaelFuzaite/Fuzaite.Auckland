@@ -41,27 +41,31 @@ angular.module('Base').service('Modal', [function () {
         return size;
     }
     
+    function BindAction (actions) {
+        return actions.map(function (t,i) {
+           return {
+               Classes: ClassDefinitions(t.Chave, t.Icone),
+               Icone:   t.Icone,
+               Texto:   t.Texto,
+               Click:   t.Click 
+           };
+        });
+    };
+
     var _modal = {
         Titulo:      '',
         Conteudo:    '',
         Tamanho:     '',
         Acoes:       [],
-        SetModal: function (data, actions) {
+        SetModalContent: function (data) {
             _modal.Titulo    = data.Title;
             _modal.Conteudo  = data.Content;
-            _modal.Tamanho     = SizeDefinitions(data.Size);
-            _modal.Acoes  = _modal.BindAction(actions);
+            _modal.Tamanho   = SizeDefinitions(data.Size);
             return _modal;
         },
-        BindAction: function (actions) {
-            return actions.map(function (t,i) {
-               return {
-                   Classes: ClassDefinitions(t.Chave, t.Icone),
-                   Icone:   t.Icone,
-                   Texto:   t.Texto,
-                   Click:   t.Click 
-               };
-            });
+        SetModalActions: function (actions) {
+            _modal.Acoes     = BindAction(actions);
+            return _modal;
         }
     };
     

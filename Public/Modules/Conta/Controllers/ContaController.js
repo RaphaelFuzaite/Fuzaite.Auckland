@@ -1,11 +1,15 @@
 'use strict';
 
-angular.module('Conta').controller('ContaController', ['$scope', 'Modal',
-	function($scope, Modal) {
-		$scope.Modal = Modal.SetModal({
-			Title: "Adicione sua conta",
-			Content: "<h3>NOME DA CONTA</h3>",
-			Size: 'P',
-		}, [{Chave:"positivo", Icone: "check", Texto: "Continuar", Click: function () { console.log("Modal click..."); }}]);
+angular.module('Conta').controller('ContaController', ['$scope', '$http', 'Modal',
+	function($scope, $http, Modal) {
+
+		$http.get('/Modules/Conta/Views/ContasCadastro.html').then(function (response) {
+			Modal.SetModalContent({
+				Title: "Adicione sua conta",
+				Content: response.data,
+				Size: 'P',
+			});
+		});
+		
 	}
 ]);

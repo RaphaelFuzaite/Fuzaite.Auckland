@@ -1,7 +1,6 @@
 'use strict';
 
-var _ = require('lodash'),
-	errorHandler = require('../ErrorController'),
+var errorHandler = require('../ErrorController'),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
 	User = mongoose.model('User');
@@ -10,7 +9,6 @@ exports.Signup = function(req, res) {
 	delete req.body.roles;
 
 	var user = new User(req.body);
-	var message = null;
 
 	user.Provider = 'local';
 	user.NomeCompleto = user.PrimeiroNome + ' ' + user.UltimoNome;
