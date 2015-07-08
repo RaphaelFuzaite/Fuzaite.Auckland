@@ -4,7 +4,8 @@
   "description": "Gerenciamento de finanças pessoais compartilhado",
   "scripts": {
     "start": "gulp",
-    "test": "gulp test"
+    "test": "gulp test",
+    "postinstall": "bower install --config.interactive=false"
   },
   "repository": {
     "type": "git",
