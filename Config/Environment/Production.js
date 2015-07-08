@@ -23,7 +23,7 @@ module.exports ={
 				'Public/Lib/semantic-ui/dist/semantic.min.js'
 			]
 		},
-		Style: 'Public/App.min.css',
-		Script: 'Public/App.min.js',
+		/*Style: 'Public/App.min.css',
+		Script: 'Public/App.min.js',*/
 	}	
 };
