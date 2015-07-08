@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Gerenciamento de finanças pessoais compartilhado",
   "scripts": {
+    "start": "gulp",
     "test": "gulp test"
   },
   "repository": {

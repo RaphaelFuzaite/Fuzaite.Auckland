@@ -15,7 +15,7 @@ angular.module('Base').directive('modal', ['Modal', function(Modal) {
 			restrict: 'A',
 			replace: true,
 			link: function ($scope, element, attrs) {
-				$scope.$watch("Modal.Conteudo", function (value) {
+				$scope.$watch('Modal.Conteudo', function (value) {
 					element.append($compile(value)($scope));
 				});	
 			}

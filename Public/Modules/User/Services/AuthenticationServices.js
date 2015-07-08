@@ -10,50 +10,50 @@ angular.module('User').factory('Authentication', ['localStorageService', functio
 				identifier: 'PrimeiroNome',
 				rules: [{
 					type: 'empty',
-					prompt: "Campo obrigatório"
+					prompt: 'Campo obrigatório'
 				}]
 			},
 			ultimoNome: {
 				identifier: 'UltimoNome',
 				rules: [{
 					type: 'empty',
-					prompt: "Campo obrigatório"
+					prompt: 'Campo obrigatório'
 				}]
 			},
 			email: {
 				identifier: 'Email',
 				rules: [{
 					type: 'empty',
-					prompt: "Campo obrigatório"
+					prompt: 'Campo obrigatório'
 				},
 				{
 					type: 'email',
-					prompt: "Email inválido"
+					prompt: 'Email inválido'
 				}]
 			},
 			nomeDeUsuario: {
 				identifier: 'NomeDeUsuario',
 				rules: [{
 					type: 'empty',
-					prompt: "Campo obrigatório"
+					prompt: 'Campo obrigatório'
 				}]
 			},			
 			senha: {
 				identifier: 'Senha',
 				rules: [{
 					type: 'empty',
-					prompt: "Campo obrigatório"
+					prompt: 'Campo obrigatório'
 				},
 				{
 					type: 'length[4]',
-					prompt: "A senha deve conter ao menos 4 caracteres"
+					prompt: 'A senha deve conter ao menos 4 caracteres'
 				}]
 			},
 			confirmacaoDeSenha: {
 				identifier: 'ConfirmacaoDeSenha',
 				rules: [{
 					type: 'match[Senha]',
-					prompt: "As senhas não combinam"
+					prompt: 'As senhas não combinam'
 				}]
 			}
 		};

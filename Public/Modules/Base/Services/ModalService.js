@@ -44,13 +44,13 @@ angular.module('Base').service('Modal', [function () {
     function BindAction (actions) {
         return actions.map(function (t,i) {
            return {
-               Classes: ClassDefinitions(t.Chave, t.Icone),
+               Classes: new ClassDefinitions(t.Chave, t.Icone),
                Icone:   t.Icone,
                Texto:   t.Texto,
                Click:   t.Click 
            };
         });
-    };
+    }
 
     var _modal = {
         Titulo:      '',
@@ -60,11 +60,11 @@ angular.module('Base').service('Modal', [function () {
         SetModalContent: function (data) {
             _modal.Titulo    = data.Title;
             _modal.Conteudo  = data.Content;
-            _modal.Tamanho   = SizeDefinitions(data.Size);
+            _modal.Tamanho   = new SizeDefinitions(data.Size);
             return _modal;
         },
         SetModalActions: function (actions) {
-            _modal.Acoes     = BindAction(actions);
+            _modal.Acoes     = new BindAction(actions);
             return _modal;
         }
     };

@@ -43,9 +43,7 @@ gulp.task('csslint', function () {
 			.pipe(plugins.livereload());
 });
 
-gulp.task('lint', function () {
-	gulp.run('jslint', 'csslint');
-});
+gulp.task('lint', ['jslint', 'csslint']);
 
 gulp.task('start', function () {
 	plugins.nodemon({

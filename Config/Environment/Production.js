@@ -2,10 +2,10 @@
 
 module.exports ={
 	DB: {
-		URI: 'mongodb://localhost/auckland-prod',
+		URI: 'mongodb://f.auck-w:RvUKjkDtdPgPRehgCvb6@ds036638.mongolab.com:36638/auckland-prod',
 		Options: {
-			User: '',
-			Pass: ''
+			User: 'f.auck-w',
+			Pass: 'RvUKjkDtdPgPRehgCvb6'
 		},
 	},
 	Assets: {

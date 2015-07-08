@@ -10,9 +10,9 @@ angular.module('Base').directive('navigationBar', ['Authentication','Menus', fun
 				$scope.Authentication = Authentication;
 
 				$scope.Usuario = {
-					Nome: "Raphael Fuzaite",
-					Descricao: "Web Developer",
-					Imagem: "elliot.jpg"
+					Nome: 'Raphael Fuzaite',
+					Descricao: 'Web Developer',
+					Imagem: 'elliot.jpg'
 				};
 				
 				Menus.AddMenuItem('Sidebar', 'Dashboard', 'Dashboard', 'bar chart');

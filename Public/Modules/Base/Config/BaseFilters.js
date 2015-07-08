@@ -44,13 +44,13 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
 }).filter('stripTags', function () {
     
     return function (val) {
-        return angular.isString(val) ? val.replace(/(<([^>]+)>)/ig, " ") : "";
+        return angular.isString(val) ? val.replace(/(<([^>]+)>)/ig, ' ') : '';
     };
     
 }).filter('capitalize', function () {
     
     return function (val) {
-        return angular.isString(val) ? val.charAt(0).toUpperCase() + val.slice(1) : "";
+        return angular.isString(val) ? val.charAt(0).toUpperCase() + val.slice(1) : '';
     };
     
 });

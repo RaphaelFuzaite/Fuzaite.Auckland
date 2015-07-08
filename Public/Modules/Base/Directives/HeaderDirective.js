@@ -9,7 +9,7 @@ angular.module('Base').directive('header', ['Menus', function(Menus) {
 				$scope.Authentication = {};
 				
 				$scope.AlternarModoDoMenu = function () {
-					Menus.ChangeMenuState("Sidebar");	
+					Menus.ChangeMenuState('Sidebar');	
 				}
 			}]
 		};
