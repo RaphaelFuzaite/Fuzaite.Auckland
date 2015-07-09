@@ -15,7 +15,7 @@ module.exports ={
 			],
 			Script: [
 				'Public/Lib/jquery/dist/jquery.js',
-				'Public/Lib/angular/angular.min.js',
+				'Public/Lib/angular/angular.js',
 				'Public/Lib/angular-ui-router/release/angular-ui-router.min.js',
 				'Public/Lib/angular-animate/angular-animate.min.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.min.js',
