@@ -25,5 +25,16 @@ module.exports ={
 		},
 		/*Style: 'Public/App.min.css',
 		Script: 'Public/App.min.js',*/
+		Style: [
+			'Public/Style/*.css',
+			'Public/Modules/*/*.css',
+			'Public/Modules/*/*/*.css'
+		],
+		Script: [
+			'Public/Config.js',
+			'Public/App.js',
+			'Public/Modules/*/*.js',
+			'Public/Modules/*/*[!Tests]*/*.js',
+		]
 	}	
 };
