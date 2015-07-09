@@ -20,7 +20,8 @@ module.exports ={
 				'Public/Lib/angular-animate/angular-animate.min.js',
 				'Public/Lib/angular-bootstrap/ui-bootstrap.min.js',
 				'Public/Lib/angular-local-storage/dist/angular-local-storage.min.js',
-				'Public/Lib/semantic-ui/dist/semantic.min.js'
+				'Public/Lib/semantic-ui/dist/semantic.min.js',
+				'Public/Lib/Init.js'
 			]
 		},
 		/*Style: 'Public/App.min.css',
