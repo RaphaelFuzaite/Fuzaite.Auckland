@@ -29,21 +29,29 @@
           <label>Cor</label>
           <div class="ui icon input">
                 <div class="ui selection dropdown">
-                        <input type="hidden" name="card[type]">
-                        <div class="default text">Type</div>
+                        <input type="hidden" name="cor">
                         <i class="dropdown icon"></i>
+                        <div class="default text">Selecione uma cor...</div>
                         <div class="menu">
-                                <div class="item" data-value="visa">
-                                        <i class="visa icon"></i>
-                                        Visa
+                                <div class="item" data-value="red">
+                                        <span class="ui red empty circular label"></span>
+                                        Vermelho
                                 </div>
-                                <div class="item" data-value="amex">
-                                        <i class="amex icon"></i>
-                                        American Express
+                                <div class="item" data-value="orange">
+                                        <span class="ui orange empty circular label"></span>
+                                        Laranja
                                 </div>
-                                <div class="item" data-value="discover">
-                                        <i class="discover icon"></i>
-                                        Discover
+                                <div class="item" data-value="yellow">
+                                        <span class="ui yellow empty circular label"></span>
+                                        Amarelo
+                                </div>
+                                <div class="item" data-value="green">
+                                        <span class="ui green empty circular label"></span>
+                                        Verde
+                                </div>
+                                <div class="item" data-value="teal">
+                                        <span class="ui teal empty circular label"></span>
+                                        Teal
                                 </div>
                         </div>
                 </div>
@@ -54,7 +62,7 @@
                 <label>Saldo Inicial</label>
                 <div class="ui labeled input">
                 <div class="ui label">
-                R$
+                        R$
                 </div>
                         <input type="text" placeholder="0,00">
                 </div>
@@ -65,7 +73,7 @@
             <i class="save icon"></i> Salvar
         </div>
         <div class="ui right floated small red labeled icon button">
-            <i class="cancel icon"></i> {{Teste}}
+            <i class="cancel icon"></i> Cancelar
         </div>      
       </div>
 </section>

@@ -18,6 +18,7 @@ angular.module('Base').directive('navigationBar', ['Authentication','Menus', fun
 				Menus.AddMenuItem('Sidebar', 'Dashboard', 'Dashboard', 'bar chart');
 				Menus.AddMenuItem('Sidebar', 'Contas', 'Contas', 'university');
 				Menus.AddMenuItem('Sidebar', 'Projetos', 'Projetos', 'rocket');
+				Menus.AddMenuItem('Sidebar', 'Opções', 'Opcoes', 'options');
 
 				$scope.Menus = Menus.GetMenu('Sidebar');
 
