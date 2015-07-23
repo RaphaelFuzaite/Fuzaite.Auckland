@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Base').directive('messagingQueue', ['Messaging', function(Messaging) {
+angular.module('Base').directive('architectureMessagingQueue', ['Messaging', function(Messaging) {
 		return {
 			restrict: 'A',
 			replace: true,

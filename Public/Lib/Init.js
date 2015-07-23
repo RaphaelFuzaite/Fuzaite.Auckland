@@ -14,15 +14,17 @@ var initVendors = (function () {
 		Layout: {
 			Element: function() {
 				$('.ui.dropdown').dropdown();
-				$('.popup').popup({
-		          transition: 'scale'
+				$('.popup').popup();
+				$('.activating-popup').popup({
+		          transition: 'scale',
+				  on: 'click'
 		        });
 				$('.message .close').on('click', function() {
   					$(this).closest('.message').fadeOut();
 				});
 				$('.ui.modal').modal({
 				    blurring: true,
-					closeable: false,
+					closable: false,
 		  		}).modal('attach events', '.modal-open.button', 'show');
 			}
 		}

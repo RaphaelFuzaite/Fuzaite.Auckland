@@ -9,6 +9,10 @@ var ContaSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	Atualizacao: {
+		type: Date,
+		default: ''
+	},
 	Nome: {
 		type: String,
 		default: '',
@@ -19,6 +23,15 @@ var ContaSchema = new Schema({
 		type: String,
 		default: '',
 		trim: true
+	},
+	Cor: {
+		type: String,
+		default: '',
+		trim: true
+	},
+	Saldo: {
+		type: Number,
+		default: 0
 	},
 	CategoriaDeConta: {
 		type: Schema.ObjectId,

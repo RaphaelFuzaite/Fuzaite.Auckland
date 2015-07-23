@@ -18,3 +18,16 @@
 html, body {
 	height: auto;
 }
+
+.dimmed.dimmable>:not(.dimmer) {
+	filter: blur(1px) grayscale(.4);
+	-webkit-filter: blur(1px) grayscale(.4);
+}
+
+.ui.dimmer {
+	background: rgba(255, 255, 255, .6);	
+}
+
+.ui.loading.form:before {
+    background: rgba(255, 255, 255, 0.5);
+}

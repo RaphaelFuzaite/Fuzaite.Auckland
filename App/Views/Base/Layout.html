@@ -29,17 +29,17 @@
 
 <body class="ng-cloak">
 	<header class="navbar">
-		<div header></div>
+		<div layout-header></div>
 	</header>	
 	<div class="message-queue">
-		<div messaging-queue></div>
+		<div architecture-messaging-queue></div>
 	</div>
 	<div class="main-content">
-		<div navigation-bar></div>
+		<div layout-navigation-bar></div>
 		<section class="container" ng-cloak>
 			{% block content %}{% endblock %}
 		</section>
-		<div modal></div>
+		<div component-modal></div>
 	</div>
 
 	<!--Application JavaScript Files-->

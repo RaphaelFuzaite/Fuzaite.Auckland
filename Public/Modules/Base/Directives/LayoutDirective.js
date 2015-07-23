@@ -1,6 +1,22 @@
 'use strict';
 
-angular.module('Base').directive('navigationBar', ['Authentication','Menus', function(Authentication, Menus) {
+angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
+		return {
+			restrict: 'A',
+			templateUrl: '/Modules/Base/Templates/Header.html',
+			controller: ['$scope', function ($scope) {
+				
+				$scope.Authentication = {};
+				
+				$scope.AlternarModoDoMenu = function () {
+					Menus.ChangeMenuState('Sidebar');	
+				}
+			}]
+		};
+	}
+]);
+
+angular.module('Base').directive('layoutNavigationBar', ['Authentication','Menus', function(Authentication, Menus) {
 		return {
 			restrict: 'A',
 			replace: true,
