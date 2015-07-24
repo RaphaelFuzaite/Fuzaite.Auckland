@@ -1,5 +1,5 @@
-<section ng-controller="ContaCadastroController">
-      <div class="ui form segments" ng-class="{'loading':Form.Loading}">
+<section ng-controller="ContaCadastroController" class="ui form" ng-class="{'loading':Form.Loading}">
+      <div class="ui segments">
       <h4 class="ui top attached header bg-wet-asphalt">Dados da sua Conta</h4>                            
       <div class="ui attached segment">
         <div class="field">
@@ -22,7 +22,7 @@
         <div class="wide field">
             <label>Descrição</label>
             <div class="ui icon input">
-                <textarea rows="2" placeholder="Descrição" style="margin-top: 0px; margin-bottom: 0px; height: 58px;" id="Descricao" name="Descricao" ng-model="Conta.Descricao"></textarea>
+                <textarea rows="2" placeholder="Descrição" style="margin-top: 0px; margin-bottom: 0px; height: 65px;" id="Descricao" name="Descricao" ng-model="Conta.Descricao"></textarea>
             </div>
         </div>
 
@@ -65,12 +65,12 @@
                 <div class="ui label">
                         R$
                 </div>
-                        <input type="text" placeholder="0,00" id="Saldo" name="Saldo" ng-model="Conta.Saldo">
+                        <input type="text" placeholder="0,00" id="Saldo" name="Saldo" ng-model="Conta.Saldo" ui-number-mask="decimal">
                 </div>
         </div>
       </div>
       <div class="ui clearing segment">
-                <div class="ui right floated small teal labeled icon button" ng-click="Enviar()">
+                <div class="ui right floated small teal labeled icon button submit" ng-click="Enviar()">
                     <i class="save icon"></i> Salvar
                 </div>
                 <div class="ui right floated small red labeled icon button">

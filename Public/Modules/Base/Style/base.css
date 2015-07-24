@@ -9,6 +9,11 @@ header.navbar .container div.icon .menu-content {
 	cursor: pointer;
 }
 
+header h4.ui.header,
+header h4.ui.header > .sub.header {
+	color: #FFF;
+}
+
 header.navbar .container div.icon .menu-content:hover {
 	border: 1px solid #FFF;
 }
@@ -26,7 +31,7 @@ header.navbar .container div.right.menu {
 }
 
 .main-content > aside.sidebar.menu {
-	margin-top: 53px !important;
+	margin-top: 60px !important;
 	width: 240px;
 }
 
@@ -76,7 +81,7 @@ header.navbar .container div.right.menu {
 }
 
 .main-content > aside.sidebar.menu.sidebar-narrow {
-	margin-top: 53px !important;
+	margin-top: 60px !important;
 	width: 56px;
 }
 
@@ -123,4 +128,8 @@ header.navbar .container div.right.menu {
 
 .main-content > aside.sidebar-narrow + section.container {
   margin-left: 80px;
+}
+
+textarea {
+    resize: none !important;
 }

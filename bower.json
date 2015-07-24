@@ -21,6 +21,7 @@
     "angular-bootstrap": "~0.13.0",
     "angular-local-storage": "~0.2.2",
     "angular-animate": "~1.4.2",
-    "angular-mask": "~3.0.12"
+    "angular-input-mask-i18n": "~1.4.1",
+    "angular-i18n": "~1.4.3"
   }
 }

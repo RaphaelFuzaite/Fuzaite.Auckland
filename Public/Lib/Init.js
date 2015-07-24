@@ -8,7 +8,7 @@ var initVendors = (function () {
 				$('.ui.checkbox').checkbox();
 			},
 			Validation: function(model) {
-				return $('.ui.form').form(model, { on: 'blur', inline: 'true' });
+				return $('.ui.form').form({ on: 'blur', inline: 'true', fields: model });
 			}
 		},
 		Layout: {
