@@ -279,7 +279,8 @@ section.container > section {
 }
 
 .message-queue .ng-enter.ng-enter-active, 
-.message-queue .ng-leave {
+.message-queue .ng-leave,
+.message-queue .ng-hide-animate {
     top: 0px;
 	opacity: 1;
 	-webkit-transition: 400ms linear all;
@@ -289,8 +290,18 @@ section.container > section {
     transition: 400ms linear all;
 }
 
+.message-queue .ng-hide-animate ~ .message {
+    top: 0px;
+	-webkit-transition: 400ms linear all;
+    -moz-transition: 400ms linear all;
+    -ms-transition: 400ms linear all;
+    -o-transition: 400ms linear all;
+    transition: 400ms linear all;
+}
+
 .message-queue .ng-leave.ng-leave-active,
-.message-queue .ng-enter {
+.message-queue .ng-enter,
+.message-queue .ng-hide.ng-hide-add-active {
     top: -50px;
 	opacity: 0;
 	-webkit-transition: 400ms linear all;
@@ -298,4 +309,29 @@ section.container > section {
     -ms-transition: 400ms linear all;
     -o-transition: 400ms linear all;
     transition: 400ms linear all;
+}
+
+.message-queue .ng-hide.ng-hide-add-active ~ .message {
+    top: -70px;
+	-webkit-transition: 400ms linear all;
+    -moz-transition: 400ms linear all;
+    -ms-transition: 400ms linear all;
+    -o-transition: 400ms linear all;
+    transition: 400ms linear all;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #aaa;
 }

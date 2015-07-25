@@ -1,7 +1,7 @@
-<div class="ui {{ Mensagem.Class }} message" ng-animate="'animate'" ng-repeat="Mensagem in Mensagens">
+<div class="ui {{ Mensagem.Class }} message" ng-animate="'animate'" ng-repeat="Mensagem in Mensagens" ng-show="Mensagem.Visivel">
 	<i class="close icon" ng-click="MessagingService.DismissMessage($index)"></i>
 	<div class="header">
-		{{ Mensagem.Titulo }}
+		#{{ Mensagem.Id+1 | numberFixedLen:3 }} - {{ Mensagem.Titulo }}
 	</div>
 	<p>{{ Mensagem.Texto }}</p>
 </div>

@@ -1,6 +1,9 @@
 <section ng-controller="AutenticacaoController">
   <div class="login-wrapper">
-    <h4 class="ui top attached header bg-wet-asphalt">Acesse sua conta</h4>
+    
+    <div class="ui top attached segment bg-wet-asphalt">
+      <h4 class="ui top attached">Acesse sua conta</h4>
+    </div>
     <div class="ui fluid form attached segment">
       <div class="one field">
         <div class="field">
@@ -18,8 +21,10 @@
             </div>
         </div>
       </div>
-      <div class="ui bottom attached label"> <a href="/#!/EsqueciASenha">Esqueceu a senha?</a></div>
-      <div class="ui right floated small teal labeled icon submit button" ng-click="Signin()">
+    </div>
+    <div class="ui clearing attached secondary segment">
+      <a class="ui left floated" href="/#!/EsqueciASenha">Esqueceu a senha?</a>
+      <div class="ui right floated small teal labeled icon button" ng-click="Signin()">
           <i class="power icon"></i> Entrar
       </div>
     </div>

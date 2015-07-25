@@ -30,29 +30,13 @@
           <label>Cor</label>
           <div class="ui icon input">
                 <div class="ui selection dropdown">
-                        <input type="hidden" name="Cor" id="Cor" ng-model="Conta.Cor">
+                        <input type="hidden" name="Cor" id="Cor" ng-model="Conta.Cor" ng-update-hidden>
                         <i class="dropdown icon"></i>
                         <div class="default text">Selecione uma cor...</div>
                         <div class="menu">
-                                <div class="item" data-value="red">
-                                        <span class="ui red empty circular label"></span>
-                                        Vermelho
-                                </div>
-                                <div class="item" data-value="orange">
-                                        <span class="ui orange empty circular label"></span>
-                                        Laranja
-                                </div>
-                                <div class="item" data-value="yellow">
-                                        <span class="ui yellow empty circular label"></span>
-                                        Amarelo
-                                </div>
-                                <div class="item" data-value="green">
-                                        <span class="ui green empty circular label"></span>
-                                        Verde
-                                </div>
-                                <div class="item" data-value="teal">
-                                        <span class="ui teal empty circular label"></span>
-                                        Teal
+                                <div class="item" data-value="{{ Cor.Valor }}" ng-repeat="Cor in Cores" ng-click="Conta.Cor=Cor.Valor">
+                                        <span class="ui empty circular label {{ Cor.Valor }}"></span>
+                                        {{ Cor.Nome }}
                                 </div>
                         </div>
                 </div>

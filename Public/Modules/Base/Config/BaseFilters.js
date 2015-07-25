@@ -53,4 +53,23 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
         return angular.isString(val) ? val.charAt(0).toUpperCase() + val.slice(1) : '';
     };
     
-});
+}).filter('sumOfValue', function () {
+    return function (data, key) {
+        if (typeof (data) === 'undefined' || typeof (key) === 'undefined') {
+            return 0;
+        }
+        var sum = 0;
+        for (var i = 0; i < data.length; i++) {
+            sum = sum + parseInt(data[i][key]);
+        }
+        return sum;
+    }
+}).filter('byteNotation', function() {
+	return function(bytes, precision, prefix) {
+		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+		if (typeof precision === 'undefined') precision = 1;
+		var units = ['', 'K', 'M', 'G', 'T', 'P'],
+			number = Math.floor(Math.log(bytes) / Math.log(1000));
+		return prefix + (bytes / Math.pow(1000, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
+	}
+});;

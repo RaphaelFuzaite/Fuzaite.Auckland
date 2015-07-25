@@ -36,6 +36,10 @@ var ContaSchema = new Schema({
 	CategoriaDeConta: {
 		type: Schema.ObjectId,
 		ref: 'CategoriasDeConta'
+	},
+	User: {
+		type: Schema.ObjectId,
+		ref: 'User'
 	}
 });
 
