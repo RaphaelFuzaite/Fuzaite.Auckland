@@ -2,7 +2,7 @@
 
 angular.module('Base').directive('uxNgEnter', function() {
 		return function (scope, element, attrs) {
-        element.bind("keydown keypress", function (event) {
+        element.bind('keydown keypress', function (event) {
             if(event.which === 13) {
                 scope.$apply(function (){
                     scope.$eval(attrs.uxNgEnter);
@@ -14,10 +14,9 @@ angular.module('Base').directive('uxNgEnter', function() {
 })
 .directive('ngUpdateHidden',function() {
     return function(scope, el, attr) {
-        var model = attr['ngModel'];
+        var model = attr['ng.model'];
         scope.$watch(model, function(nv) {
             el.val(nv);
         });
-
     };
 });

@@ -10,7 +10,7 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 				
 				$scope.AlternarModoDoMenu = function () {
 					Menus.ChangeMenuState('Sidebar');	
-				}
+				};
 			}]
 		};
 	}

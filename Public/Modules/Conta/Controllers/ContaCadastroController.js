@@ -8,7 +8,7 @@ angular.module('Conta').controller('ContaCadastroController', ['$scope', '$http'
 		$scope.Form = {
 			Loading: Loader.FormLoad,
 			IsInvalid: function () { 
-				return !$(this.$parent.Popup.Element).form('validate form') 
+				return !$(this.$parent.Popup.Element).form('validate form');
 			}
 		};
 		
@@ -35,9 +35,9 @@ angular.module('Conta').controller('ContaCadastroController', ['$scope', '$http'
 			$scope.Form.Loading = true;
 			
 			$http.post('/Account/Create', $scope.Conta).success(function(response) {
-				console.log("Sucesso", response);
+				console.log('Sucesso', response);
 			}).error(function(response) {
-				console.log("Erro", response);
+				console.log('Erro', response);
 			}).finally(function() {
 				$scope.Form.Loading = false;
 			});

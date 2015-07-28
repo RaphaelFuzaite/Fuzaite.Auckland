@@ -8,6 +8,7 @@ var watchFiles = {
 	clientViews: ['Public/Modules/**Views/**/*.html'],
 	clientJS: ['Public/*.js', 'Public/Modules/**/*.js'],
 	clientCSS: ['Public/Style/*.css','Public/Modules/**/*.css'],
+	clientTests: ['Public/Modules/**/Tests/*.js'],
 	allJS: function() {
 		return watchFiles.clientJS.concat(watchFiles.serverJS);
 	},
@@ -58,6 +59,31 @@ gulp.task('watch', function () {
 	gulp.watch(watchFiles.allCSS(), ['csslint']);
 });
 
+gulp.task('nodeEnvTest', function() {
+	plugins.env({
+		vars: {
+			NODE_ENV: 'Test'
+		}
+	});
+});
+
+gulp.task('clientTest', function () {
+	var Server = require('karma').Server;
+	new Server({
+    	configFile: __dirname + '/karma.conf.js',
+		autoWatch: false,
+		singleRun: true
+  	}, function(){}).start();
+});
+
+gulp.task('clientDevTest', function (done) {
+	new plugins.karma.Server({
+		configFile: 'karma.conf.js',
+ 		autoWatch: true,
+		singleRun: false
+	}, done).start();
+});
+
 gulp.task('default', ['loadConfig', 'lint', 'start', 'watch']);
 
-gulp.task('test', ['loadConfig', 'lint']);
+gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'clientTest']);

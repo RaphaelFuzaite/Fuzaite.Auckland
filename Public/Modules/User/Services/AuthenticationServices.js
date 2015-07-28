@@ -64,20 +64,20 @@ angular.module('User').factory('Authentication', ['localStorageService', functio
 		User: storagePrefix + 'User'
 	};
 	
-	function GetUser() {
+	authentication.GetUser = function () {
 		authentication.User = localStorageService.get(storageDefinitions.User);
-	}
+	};
 	
 	authentication.FetchUser = function (user) {
 		if (!angular.isUndefined(user)) {
 			localStorageService.set(storageDefinitions.User, user);
 		}
-		GetUser();
+		authentication.GetUser();
 	};
 	
 	authentication.RemoveUser = function () {
 		localStorageService.remove(storageDefinitions.User);
-		GetUser();
+		authentication.GetUser();
 	};
 	
 	authentication.Model = model;

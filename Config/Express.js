@@ -34,9 +34,9 @@ module.exports = function (db) {
 	app.set('views', './App/Views');
 	app.set('showStackError', true);
 	
-	if (process.env.NODE_ENV === 'development') {
+	if (process.env.NODE_ENV === 'Development') {
 		app.set('view cache', false);
-	} else if (process.env.NODE_ENV === 'production') {
+	} else if (process.env.NODE_ENV === 'Production') {
 		app.locals.cache = 'memory';
 	}
 	

@@ -1,19 +1,20 @@
 // Karma configuration
 // Generated on Sat Jul 25 2015 18:03:19 GMT-0300 (Hora oficial do Brasil)
 
+var applicationConfiguration = require('./Config/Config');
+
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    // basePath: '',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
-    files: [
-    ],
+    files: applicationConfiguration.Assets.Lib.Script.concat(applicationConfiguration.Assets.Script, applicationConfiguration.Assets.Tests),
 
     // list of files to exclude
     exclude: [
@@ -28,6 +29,8 @@ module.exports = function(config) {
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
+    
+    proxies: { '/': 'http://localhost:3000/'},    
 
     // web server port
     port: 9876,
@@ -45,7 +48,12 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome', 'Firefox', 'IE'],
+    browsers: [
+      'PhantomJS' 
+      /*,'Chrome' 
+      ,'Firefox' 
+      ,'IE'*/
+     ],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

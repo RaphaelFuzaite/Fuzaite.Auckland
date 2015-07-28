@@ -1,6 +1,6 @@
 'use strict';
 
-var initVendors = (function () {
+var InitVendors = (function () {
 
 	return {
 		Form: {

@@ -45,6 +45,10 @@ module.exports = {
 			'Public/App.js',
 			'Public/Modules/*/*.js',
 			'Public/Modules/*/*[!Tests]*/*.js',
+		],
+		Tests: [
+			'Public/Lib/angular-mocks/angular-mocks.js',
+			'Public/Modules/*/Tests/*.js'
 		]
 	}
 };

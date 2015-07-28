@@ -20,9 +20,9 @@ angular.module('Base').service('Messaging', ['$interval', function ($interval) {
                     //_messaging.DismissMessage(item.Id);
                 }
             }, 1000);
-        }
+        };
         self.Timer(self);
-    }
+    };
     
     var _messaging = {
         Itens: [],
@@ -40,7 +40,7 @@ angular.module('Base').service('Messaging', ['$interval', function ($interval) {
             }
         },
         GetDisclaimer: function () {
-            if (this.Itens.every(function(t){ return t.Duracao < 1 })) {
+            if (this.Itens.every(function(t){ return t.Duracao < 1; })) {
                 this.ResetQueue();
             }
             

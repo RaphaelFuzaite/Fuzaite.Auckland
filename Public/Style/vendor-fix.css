@@ -25,9 +25,11 @@ html, body {
 }
 
 .ui.dimmer {
-	background: rgba(255, 255, 255, .6);	
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, .6);
 }
 
 .ui.loading.form:before {
+	background: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 0.5);
 }

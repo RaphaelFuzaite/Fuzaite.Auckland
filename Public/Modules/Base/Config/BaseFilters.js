@@ -18,7 +18,7 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
         value = value.substr(0, max);
         if (wordwise) {
             var lastspace = value.lastIndexOf(' ');
-            if (lastspace != -1) {
+            if (lastspace !== -1) {
                 value = value.substr(0, lastspace);
             }
         }
@@ -63,7 +63,7 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
             sum = sum + parseInt(data[i][key]);
         }
         return sum;
-    }
+    };
 }).filter('byteNotation', function() {
 	return function(bytes, precision, prefix) {
 		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
@@ -71,5 +71,5 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
 		var units = ['', 'K', 'M', 'G', 'T', 'P'],
 			number = Math.floor(Math.log(bytes) / Math.log(1000));
 		return prefix + (bytes / Math.pow(1000, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
-	}
-});;
+	};
+});

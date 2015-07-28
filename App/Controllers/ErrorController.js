@@ -21,7 +21,7 @@ exports.GetErrorMessage = function(err) {
 		switch (err.code) {
 			case 11000:
 			case 11001:
-				message = GetUniqueErrorMessage(err);
+				message = new GetUniqueErrorMessage(err);
 				break;
 			default:
 				message = 'Algo deu errado!';

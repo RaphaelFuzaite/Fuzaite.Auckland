@@ -14,7 +14,7 @@ angular.module('Conta').factory('ContaModel', function() {
 		self.CategoriaDeConta = data.CategoriaDeConta;
 		
 		return self;
-	}
+	};
 	
 	Conta.prototype.GetRules = function () {
 		return {
@@ -29,21 +29,21 @@ angular.module('Conta').factory('ContaModel', function() {
 				identifier: 'Descricao',
 				optional: true,
 				rules: [{
-					type: "empty",
+					type: 'empty',
 					prompt: 'Dados inválidos para este campo'
 				}]
 			},
 			cor: {
 				identifier: 'Cor',
 				rules: [{
-					type: "empty",
+					type: 'empty',
 					prompt: 'Selecione uma opção'
 				}]
 			},
 			saldo: {
 				identifier: 'Saldo',
 				rules: [{
-					type: "regExp[/^[+-]?[0-9]{1,3}(?:\.?[0-9]{3})*(?:,[0-9]{2})?$/]",
+					type: 'regExp[/^[+-]?[0-9]{1,3}(?:\.?[0-9]{3})*(?:,[0-9]{2})?$/]',
 					prompt: 'Valor inválido'
 				}]
 			},
@@ -54,8 +54,8 @@ angular.module('Conta').factory('ContaModel', function() {
 					prompt: 'Selecione uma opção'
 				}]
 			},
-		}
-	}
+		};
+	};
 	
 	return Conta;
 });

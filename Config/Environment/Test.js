@@ -9,6 +9,6 @@ module.exports ={
 		},
 	},
 	App: {
-		Title: 'Fuzaite.Auckland - [QA] | Gerenciador Financeiro de Projetos'
+		Title: '[QA] | Gerenciador Financeiro de Projetos'
 	}	
 };
