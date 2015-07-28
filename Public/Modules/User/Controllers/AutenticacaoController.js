@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('User').controller('AutenticacaoController', ['$scope', '$http', '$location', 'Authentication',
-	function($scope, $http, $location, Authentication) {
-		$scope.Authentication = Authentication;
+angular.module('User').controller('AutenticacaoController', ['$scope', '$http', '$location', 'UserModel',
+	function($scope, $http, $location, User) {
+		$scope.User = new User();
 
-		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.Authentication.Model));
+		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.User.GetRules()));
 
-		if ($scope.Authentication.User) $location.path('/');
+		if ($scope.User.Authentication.Get()) $location.path('/');
 
 		$scope.isInvalid = function() {
     		return !Form.form('validate form');
@@ -17,7 +17,7 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 				return false;
 				
 			$http.post('/Auth/Signup', $scope.Credenciais).success(function(response) {
-				$scope.Authentication.FetchUser(response);
+				$scope.User.Authentication.Fetch(response);
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;
@@ -29,7 +29,7 @@ angular.module('User').controller('AutenticacaoController', ['$scope', '$http', 
 				return false;
 
 			$http.post('/Auth/Signin', $scope.Credenciais).success(function(response) {
-				$scope.Authentication.FetchUser(response);
+				$scope.User.Authentication.Fetch(response);
 				$location.path('/');
 			}).error(function(response) {
 				$scope.error = response.message;

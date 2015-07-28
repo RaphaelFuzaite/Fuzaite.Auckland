@@ -6,19 +6,31 @@
 		
 		beforeEach(module(ApplicationConfiguration.ModuleName));
 		
-		var TestController,
+		var createController,
 			scope;
+
+		beforeEach(inject(function ($injector) {
+			var $rootScope = $injector.get('$rootScope');
+			var $controller = $injector.get('$controller');
 			
-		beforeEach(inject(function ($rootScope, $controller) {
 			scope = $rootScope.$new();
-			TestController = $controller('TestController', {
-				$scope: scope
-			});
+			createController = function (controller) {
+				return $controller(controller, { $scope: scope });	
+			};
 		}));
-		
-		it('Dizer Olá Mundo!', function () {
+
+		it('Deve dizer Olá Mundo!', function () {
+			createController('TestController');
 			expect(scope.HelloWorld).toEqual('Olá Mundo!');
 		});
+		
+		/*it('$scope.Sigin() - Deve efetuar o login do usuário na aplicação com dados válidos', inject(function (UserModel) {
+			createController('AutenticacaoController');
+			
+			var postData = new UserModel({
+				
+			}); 
+		}));*/
 		
 	});
 	

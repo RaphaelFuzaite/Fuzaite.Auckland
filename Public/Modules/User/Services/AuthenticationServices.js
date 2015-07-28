@@ -2,85 +2,39 @@
 
 angular.module('User').factory('Authentication', ['localStorageService', function(localStorageService) {
 
-	var authentication = {};
-
-	var model = (function() {
-		return {
-			primeiroNome: {
-				identifier: 'PrimeiroNome',
-				rules: [{
-					type: 'empty',
-					prompt: 'Campo obrigatório'
-				}]
-			},
-			ultimoNome: {
-				identifier: 'UltimoNome',
-				rules: [{
-					type: 'empty',
-					prompt: 'Campo obrigatório'
-				}]
-			},
-			email: {
-				identifier: 'Email',
-				rules: [{
-					type: 'empty',
-					prompt: 'Campo obrigatório'
-				},
-				{
-					type: 'email',
-					prompt: 'Email inválido'
-				}]
-			},
-			nomeDeUsuario: {
-				identifier: 'NomeDeUsuario',
-				rules: [{
-					type: 'empty',
-					prompt: 'Campo obrigatório'
-				}]
-			},			
-			senha: {
-				identifier: 'Senha',
-				rules: [{
-					type: 'empty',
-					prompt: 'Campo obrigatório'
-				},
-				{
-					type: 'length[4]',
-					prompt: 'A senha deve conter ao menos 4 caracteres'
-				}]
-			},
-			confirmacaoDeSenha: {
-				identifier: 'ConfirmacaoDeSenha',
-				rules: [{
-					type: 'match[Senha]',
-					prompt: 'As senhas não combinam'
-				}]
-			}
+	var Authentication = function (data) {
+		var self = this;
+		
+		self.User = data;
+		self.Storage = {
+			Prefix: 'fAuck',
+			Definitions: {
+				User: this.Storage.Prefix + 'User'
+			}	
 		};
-	})();
-	
-	var storagePrefix = 'fAuck';
-	var storageDefinitions = {
-		User: storagePrefix + 'User'
+		
+		return self;
 	};
 	
-	authentication.GetUser = function () {
-		authentication.User = localStorageService.get(storageDefinitions.User);
+	Authentication.prototype.Set = function (user) {
+		localStorageService.set(this.Storage.Definitions.User, user);
+	};	
+	
+	Authentication.prototype.Get = function () {
+		this.User = localStorageService.get(this.Storage.Definitions.User);
 	};
 	
-	authentication.FetchUser = function (user) {
+	Authentication.prototype.Fetch = function (user) {
 		if (!angular.isUndefined(user)) {
-			localStorageService.set(storageDefinitions.User, user);
+			this.Set();
 		}
-		authentication.GetUser();
+		this.Get();
 	};
 	
-	authentication.RemoveUser = function () {
-		localStorageService.remove(storageDefinitions.User);
-		authentication.GetUser();
+	Authentication.prototype.Remove = function () {
+		localStorageService.remove(this.Storage.Definitions.User);
+		this.Get();
 	};
 	
-	authentication.Model = model;
-	
-	return authentication;
+	return Authentication;
 }]);

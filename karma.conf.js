@@ -17,27 +17,24 @@ module.exports = function(config) {
     files: applicationConfiguration.Assets.Lib.Script.concat(applicationConfiguration.Assets.Script, applicationConfiguration.Assets.Tests),
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
     
-    proxies: { '/': 'http://localhost:3000/'},    
+    proxies: { '/': 'http://localhost:3000/' },    
 
     // web server port
     port: 9876,
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
