@@ -2,7 +2,7 @@
 
 (function() {
 	
-	describe('TestController', function() {
+	describe('FAuck - User Controller', function() {
 		
 		beforeEach(module(ApplicationConfiguration.ModuleName));
 		

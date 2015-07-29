@@ -67,7 +67,7 @@ gulp.task('nodeEnvTest', function() {
 	});
 });
 
-gulp.task('clientUnitTest', function () {
+gulp.task('clientTest', function () {
 	var Server = require('karma').Server;
 	new Server({
     	configFile: __dirname + '/karma.conf.js',
@@ -85,17 +85,5 @@ gulp.task('clientDevTest', function (done) {
   	}, function(){}).start();
 });
 
-gulp.task('webdriver', plugins.protractor.webdriver);
-
-gulp.task('clientE2ETest', ['webdriver'], function () {
-	 gulp.src(['Public/Modules/*/Tests/E2E/*.js'])
-	 .pipe(plugins.protractor.protractor({
-				configFile: 'protractor.conf.js',
-				args: ['--baseUrl', 'http://localhost:3000']
-			}).on('error', function(e) { throw e; }));
-});
-
 gulp.task('default', ['loadConfig', 'lint', 'start', 'watch']);
-
-gulp.task('testUnit', ['nodeEnvTest','loadConfig', 'lint', 'clientUnitTest']);
-gulp.task('testE2E', ['nodeEnvTest','loadConfig', 'lint', 'clientE2ETest']);
+gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'clientTest']);

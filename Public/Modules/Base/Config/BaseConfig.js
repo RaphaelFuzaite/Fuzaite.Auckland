@@ -36,5 +36,5 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 		]);
 	}
 ]).run(['Authentication', function (Authentication) {
-    Authentication.FetchUser();
+    //Authentication.FetchUser();
 }]);
