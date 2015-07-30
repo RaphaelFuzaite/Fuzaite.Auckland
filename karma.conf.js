@@ -14,7 +14,7 @@ module.exports = function(config) {
     frameworks: ['ng-scenario'],
 
     // list of files / patterns to load in the browser
-    files: applicationConfiguration.Assets.Lib.Script.concat(applicationConfiguration.Assets.Script, applicationConfiguration.Assets.Tests),
+    files: applicationConfiguration.Assets.Lib.Script.concat(applicationConfiguration.Assets.Script).map(function(t){ return { pattern: t, watched: false} }).concat(applicationConfiguration.Assets.Tests),
 
     // list of files to exclude
     exclude: [],
