@@ -2,16 +2,15 @@
 
 angular.module('User').factory('Authentication', ['localStorageService', function(localStorageService) {
 
-	var Authentication = function (data) {
+	var Authentication = function () {
 		var self = this;
 		
-		self.User = data;
 		self.Storage = {
 			Prefix: 'fAuck',
-			Definitions: {
-				User: this.Storage.Prefix + 'User'
-			}	
+			Definitions: {}	
 		};
+		
+		self.Storage.Definitions.User = self.Storage.Prefix + 'User';
 		
 		return self;
 	};
@@ -21,7 +20,7 @@ angular.module('User').factory('Authentication', ['localStorageService', functio
 	};	
 	
 	Authentication.prototype.Get = function () {
-		this.User = localStorageService.get(this.Storage.Definitions.User);
+		return localStorageService.get(this.Storage.Definitions.User);
 	};
 	
 	Authentication.prototype.Fetch = function (user) {

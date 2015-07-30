@@ -71,7 +71,7 @@ angular.module('User').factory('UserModel', ['Authentication', function(Authenti
 		};
 	};
 	
-	User.prototype.Authentication = new Authentication(User);
+	User.prototype.Authentication = new Authentication();
 	
 	return User;
 }]);

@@ -2,7 +2,7 @@
 
 angular.module('User').controller('AutenticacaoController', ['$scope', '$http', '$location', 'UserModel',
 	function($scope, $http, $location, User) {
-		$scope.User = new User();
+		$scope.User = new User({});
 
 		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.User.GetRules()));
 

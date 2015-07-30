@@ -80,10 +80,10 @@ gulp.task('clientDevTest', function (done) {
 	var Server = require('karma').Server;
 	new Server({
     	configFile: __dirname + '/karma.conf.js',
-		autoWatch: false,
-		singleRun: true
+		autoWatch: true,
+		singleRun: false
   	}, function(){}).start();
 });
 
 gulp.task('default', ['loadConfig', 'lint', 'start', 'watch']);
-gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'clientTest']);
+gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'start', 'clientDevTest']);
