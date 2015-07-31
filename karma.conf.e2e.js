@@ -11,7 +11,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['ng-scenario'],
 
     // list of files / patterns to load in the browser
     files: applicationConfiguration.Assets.Lib.Script.concat(applicationConfiguration.Assets.Script).map(function(t){ return { pattern: t, watched: false} }).concat(applicationConfiguration.Assets.Tests),
@@ -22,6 +22,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {},
+        
+     //urlRoot: '__karma__',
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -44,14 +46,14 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      'PhantomJS' 
-      //'Chrome' 
+      //'PhantomJS' 
+      'Chrome' 
       //'Firefox' 
       //'IE'
      ],
      
      //urlRoot: '__karma__',
-     //proxies: { '/': 'http://localhost:3000/' },
+     proxies: { '/': 'http://localhost:3000/' },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
