@@ -86,4 +86,4 @@ gulp.task('clientDevTest', function (done) {
 });
 
 gulp.task('default', ['loadConfig', 'lint', 'start', 'watch']);
-gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'start', 'clientDevTest']);
+gulp.task('test', ['nodeEnvTest','loadConfig', 'lint', 'clientDevTest']);
