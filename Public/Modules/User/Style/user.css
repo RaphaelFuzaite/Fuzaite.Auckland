@@ -7,6 +7,22 @@
   margin-top: 150px;
 }
 
-.cadastro-wrapper {
-  margin: 30px 10%;
+@media (max-width: 768px) {
+
+  .cadastro-wrapper {
+    margin: 30px 5%;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .cadastro-wrapper {
+    margin: 30px 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cadastro-wrapper {
+    margin: 30px 30%;
+  }  
 }
