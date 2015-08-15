@@ -1,6 +1,6 @@
 {
   "name": "Fuzaite.Auckland",
-  "version": "0.0.0",
+  "version": "1.2.0",
   "authors": [
     "Raphael Fuzaite"
   ],
@@ -24,5 +24,8 @@
     "angular-input-mask-i18n": "~1.4.1",
     "angular-i18n": "~1.4.3",
     "angular-mocks": "~1.4.3"
+  },
+  "resolutions": {
+    "angular": "~1.4"
   }
 }

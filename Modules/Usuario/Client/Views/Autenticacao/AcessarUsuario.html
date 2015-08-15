@@ -1,0 +1,32 @@
+<section ng-controller="AutenticacaoClientController">
+  <div class="login-wrapper">
+    
+    <div class="ui top attached segment bg-wet-asphalt">
+      <h4 class="ui top attached">Acesse sua conta</h4>
+    </div>
+    <div class="ui fluid form attached segment">
+      <div class="one field">
+        <div class="field">
+          <label>Usuário</label>
+          <div class="ui icon input">
+              <input type="text" ng-model="Credenciais.NomeDeUsuario" placeholder="Usuário" name="NomeDeUsuario" id="NomeDeUsuario" ux-ng-enter="Signin()">
+              <i class="user icon"></i>
+            </div>
+        </div>
+        <div class="field">
+          <label>Senha</label>
+          <div class="ui icon input">
+              <input type="password" ng-model="Credenciais.Senha" placeholder="Senha" name="Senha" id="Senha" ux-ng-enter="Signin()">
+              <i class="lock icon"></i>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui clearing attached secondary segment">
+      <a class="ui left floated" href="/#!/EsqueciASenha">Esqueceu a senha?</a>
+      <div class="ui right floated small teal labeled icon button" ng-click="Signin()">
+          <i class="power icon"></i> Entrar
+      </div>
+    </div>
+  </div>
+</section>

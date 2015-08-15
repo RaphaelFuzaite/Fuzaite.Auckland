@@ -1,0 +1,65 @@
+<section ng-controller="CadastrarContaClientController" class="ui form" ng-class="{'loading':Form.Loading}">
+      <div class="ui segments">
+      <h4 class="ui top attached header bg-wet-asphalt">Dados da sua Conta</h4>                            
+      <div class="ui attached segment">
+        <div class="field">
+          <label>Categoria</label>
+          <div class="ui input">
+                <select class="ui dropdown" ng-model="Conta.CategoriaDeConta" id="CategoriaDeConta" name="CategoriaDeConta">
+                        <option value="">Selecione uma categoria</option>
+                        <option ng-repeat="categoria in CategoriasDeConta" value="{{ categoria._id }}">{{ categoria.Nome }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field">
+          <label>Nome</label>
+          <div class="ui icon input">
+              <input type="text" placeholder="Nome" id="Nome" name="Nome" ng-model="Conta.Nome" />
+            </div>
+        </div>
+
+        <div class="wide field">
+            <label>Descrição</label>
+            <div class="ui icon input">
+                <textarea rows="2" placeholder="Descrição" style="margin-top: 0px; margin-bottom: 0px; height: 65px;" id="Descricao" name="Descricao" ng-model="Conta.Descricao"></textarea>
+            </div>
+        </div>
+
+        <div class="wide field">
+          <label>Cor</label>
+          <div class="ui icon input">
+                <div class="ui selection dropdown">
+                        <input type="hidden" name="Cor" id="Cor" ng-model="Conta.Cor" ng-update-hidden>
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Selecione uma cor...</div>
+                        <div class="menu">
+                                <div class="item" data-value="{{ Cor.Valor }}" ng-repeat="Cor in Cores" ng-click="Conta.Cor=Cor.Valor">
+                                        <span class="ui empty circular label {{ Cor.Valor }}"></span>
+                                        {{ Cor.Nome }}
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wide field">
+                <label>Saldo Inicial</label>
+                <div class="ui labeled input">
+                <div class="ui label">
+                        R$
+                </div>
+                        <input type="text" placeholder="0,00" id="Saldo" name="Saldo" ng-model="Conta.Saldo" ui-number-mask="decimal">
+                </div>
+        </div>
+      </div>
+      <div class="ui clearing segment">
+                <div class="ui right floated small teal labeled icon button submit" ng-click="Enviar()">
+                    <i class="save icon"></i> Salvar
+                </div>
+                <div class="ui right floated small red labeled icon button">
+                    <i class="cancel icon"></i> Cancelar
+                </div>
+        </div>
+        </div>
+</section>

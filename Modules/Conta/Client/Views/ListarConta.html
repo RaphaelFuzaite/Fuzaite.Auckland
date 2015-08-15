@@ -1,0 +1,73 @@
+<section ng-controller="ListarContaClientController">
+	<header class="ui basic clearing segment">
+		<div class="page-title">
+			<h2 class="ui header">
+		      Contas
+		      <div class="sub header">Centralize suas rendas</div>
+		    </h2>
+		</div>
+		<div class="page-info">
+			<div class="ui right floated small bg-pomegranate labeled icon button activating-popup">
+          		<i class="plus icon"></i> Nova Conta
+        	</div>
+            <div component-popup></div>
+		</div>  
+    </div>
+	</header>
+	<div class="ui compact horizontal segments">
+		<div class="ui center aligned attached segment" ng-repeat="Conta in Contas">
+			<h1 class="ui header">
+				{{ Conta.Saldo | byteNotation:3:"R$ " }}
+				<div class="sub header">
+					<span class="ui image {{ Conta.Cor }} label">
+						{{ Conta.Nome }}
+						<div class="detail">{{ Conta.CategoriaDeConta.Nome }}</div>
+					</span>
+				</div>
+				<div class="ui segment basic"></div>
+			</h1>
+		</div>
+		<div class="ui bottom attached label">
+			<h5 class="ui header">
+				SALDO ATUAL
+				<div class="sub header">
+					{{ Contas | sumOfValue:'Saldo' | currency:"R$ " }}
+				</div>
+			</h5>
+		</div>
+	</div>
+	
+	<div class="ui raised segment">			
+		<table class="ui compact grey celled definition table">
+		  <thead class="full-width">
+		    <tr>
+		      <th></th>
+		      <th>Nome</th>
+		      <th>Categoria</th>
+		      <th>Atualização</th>
+		      <th>Saldo</th>
+			  <th>Usuário</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="Conta in Contas">
+		      <td class="collapsing">
+		        <span class="ui empty circular label {{ Conta.Cor }}"></span>
+		      </td>
+		      <td>{{ Conta.Nome }}</td>
+		      <td>{{ Conta.CategoriaDeConta.Nome }}</td>
+		      <td>{{ Conta.Atualizacao || Conta.Criacao | date:"dd/MM/yyyy 'às' HH:mm"  }}</td>
+		      <td>{{ Conta.Saldo | currency:"R$ " }}</td>
+			  <td>{{ Conta.User.NomeCompleto }}</td>
+		    </tr>
+		  </tbody>
+		  <tfoot class="full-width">
+		    <tr>
+		      <th></th>
+		      <th colspan="5">
+		      </th>
+		    </tr>
+		  </tfoot>
+		</table>
+	</div>
+</section>
