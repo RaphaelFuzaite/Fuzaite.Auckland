@@ -14,14 +14,14 @@
   	</div>
   		<div class="right menu">
 		    <div class="item">
-				<div class="ui buttons" ng-hide="Authentication.User">
+				<div class="ui buttons" ng-hide="Authentication">
 					<a href="/#!/Acessar" class="ui purple button">Já sou usuário</a>
 					<div class="or"></div>
 					<a href="/#!/Cadastrar" class="ui blue button">Criar conta</a>
 				</div>				
 			</div>
-			<div class="ui dropdown item" ng-show="Authentication.User">
-				{{ Authentication.User.NomeCompleto }}
+			<div class="ui dropdown item" ng-show="Authentication">
+				{{ Authentication.NomeCompleto }}
 				<i class="dropdown icon"></i>
 				<div class="menu">
 					<div class="header">Usuário</div>

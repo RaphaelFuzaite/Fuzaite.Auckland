@@ -4,11 +4,10 @@ angular.module('Usuario').controller('AutenticacaoClientController', ['$scope', 
 	function($scope, $http, $location, Usuario) {
 		$scope.User = new Usuario({});
 
-		var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.User.GetRules()));
-
 		if ($scope.User.Authentication.Get()) $location.path('/');
 
 		$scope.isInvalid = function() {
+			var Form = $(ApplicationConfiguration.VendorsInitializer.Form.Validation($scope.User.GetRules()));
     		return !Form.form('validate form');
   		};
 

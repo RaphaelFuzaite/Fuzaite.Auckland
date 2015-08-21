@@ -25,7 +25,7 @@ angular.module('Usuario').factory('Authentication', ['localStorageService', func
 	
 	Authentication.prototype.Fetch = function (user) {
 		if (!angular.isUndefined(user)) {
-			this.Set();
+			this.Set(user);
 		}
 		this.Get();
 	};
