@@ -4,9 +4,9 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 		return {
 			restrict: 'A',
 			templateUrl: '/Modules/Base/Templates/Header.html',
-			controller: ['$scope', function ($scope) {
+			controller: ['$scope', 'UsuarioClientModel', function ($scope, Usuario) {
 				
-				$scope.Authentication = {};
+				$scope.Authentication = new Usuario({}).Authentication.Get();
 				
 				$scope.AlternarModoDoMenu = function () {
 					Menus.ChangeMenuState('Sidebar');	
@@ -16,14 +16,14 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 	}
 ]);
 
-angular.module('Base').directive('layoutNavigationBar', ['Authentication','Menus', function(Authentication, Menus) {
+angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus) {
 		return {
 			restrict: 'A',
 			replace: true,
 			templateUrl: '/Modules/Base/Templates/NavigationBar.html',
-			controller: ['$scope', function ($scope) {
+			controller: ['$scope', 'UsuarioClientModel', function ($scope, Usuario) {
 				
-				$scope.Authentication = Authentication;
+				$scope.Authentication = new Usuario({}).Authentication.Get();
 
 				$scope.Usuario = {
 					Nome: 'Raphael Fuzaite',
