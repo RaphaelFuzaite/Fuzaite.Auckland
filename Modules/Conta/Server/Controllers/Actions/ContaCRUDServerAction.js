@@ -6,7 +6,7 @@ var path = require('path'),
 	Conta = mongoose.model('Conta'),
 	_ = require('lodash');
 
-exports.Create = function(req, res) {
+/*exports.Create = function(req, res) {
 	var conta = new Conta(req.body);
 	conta.User = req.user._id;
 
@@ -35,7 +35,7 @@ exports.Update = function(req, res) {
 			res.json(conta);
 		}
 	});
-};
+};*/
 
 exports.List = function(req, res) {
 	Conta.find().sort('-Criacao').populate('User', 'NomeCompleto').populate('CategoriaDeConta', 'Nome').exec(function(err, contas) {

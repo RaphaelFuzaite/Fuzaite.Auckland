@@ -9,7 +9,7 @@ angular.module('Conta').controller('ListarContaClientController', ['$scope', '$h
 			});
 		});
 
-		$http.get('/Modules/Conta/Client/Views/CadastrarConta.html').then(function (response) {
+		$http.get('/Modules/Conta/Views/CadastrarConta.html').then(function (response) {
 			Popup.SetPopupContent({
 				Content: response.data,
 				Model: new ContaModel({}),
