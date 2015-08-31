@@ -7,7 +7,11 @@ angular.module('Projeto').config(['$stateProvider', function($stateProvider) {
 			data: {
 				Titulo: 'Projetos',
 				Subtitulo: 'Planejamentos registrados',
-			}
+			},
+			ncyBreadcrumb: {
+				parent: 'Inicio',
+				label: 'Projetos'
+  			}
 		});
 	}
 ]);

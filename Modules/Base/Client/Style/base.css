@@ -471,3 +471,31 @@ section.container > section {
     -o-transition: 400ms linear all;
     transition: 400ms linear all;
 }
+
+.ui.breadcrumb a.section:not(:last-of-type):after {
+	content: "\f054";
+	color: rgb(0, 0, 0);
+	opacity: 40%;
+}
+
+.ui.breadcrumb a.section:last-of-type:after {
+	content: "\f061";
+	color: rgb(0, 0, 0);
+	opacity: 80%;
+}
+
+.ui.breadcrumb a.section:after {
+	font-family: 'Icons';
+	background: none !important;
+	display: inline-block;
+    opacity: 0.7;
+    margin: 0em 0.21428571rem 0em;
+	width: 1.18em;
+    vertical-align: baseline;
+	font-size: 0.85714286em;
+	font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    text-align: center;
+    speak: none;
+}

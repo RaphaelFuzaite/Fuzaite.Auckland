@@ -14,9 +14,7 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 			}]
 		};
 	}
-]);
-
-angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus) {
+]).directive('layoutNavigationBar', ['Menus', function(Menus) {
 		return {
 			restrict: 'A',
 			replace: true,
@@ -41,9 +39,7 @@ angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus
 			}]
 		};
 	}
-]);
-
-angular.module('Base').directive('layoutContentDefinition', function() {
+]).directive('layoutContentDefinition', function() {
 	return {
 		restrict: 'A',
 		replace: false,
@@ -53,7 +49,8 @@ angular.module('Base').directive('layoutContentDefinition', function() {
 				$scope.ContentDefinition = {
 					Titulo : $state.current.data.Titulo,
 					Subtitulo : $state.current.data.Subtitulo
-				}
+				};
+				
 			});
 		}]
 	};

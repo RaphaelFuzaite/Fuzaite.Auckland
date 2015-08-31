@@ -11,7 +11,10 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 				Titulo: 'Fuzaite Auckland',
 				Subtitulo: 'Gerenciamento Financeiro',
 				ncyBreadcrumbLabel: '<i class="home icon"></i> Início'
-  			}
+  			},
+			ncyBreadcrumb: {
+				label: 'Início'
+			}
 		}).state('NotFound', {
         	url: '/NotFound',
         	templateUrl: 'Modules/Base/Views/404BaseClientView.html'
