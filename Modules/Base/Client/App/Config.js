@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function () {
   // Init module configuration options
   var applicationModuleName = 'fuzaite.auckland';
-  var applicationModuleVendorDependencies = ['ui.router', 'ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui.utils.masks'];
+  var applicationModuleVendorDependencies = ['ui.router', 'ui.bootstrap', 'ngAnimate', 'LocalStorageModule', 'ui.utils.masks', 'ncy-angular-breadcrumb'];
   
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {

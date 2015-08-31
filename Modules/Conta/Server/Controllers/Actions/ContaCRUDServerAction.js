@@ -6,7 +6,7 @@ var path = require('path'),
 	Conta = mongoose.model('Conta'),
 	_ = require('lodash');
 
-/*exports.Create = function(req, res) {
+exports.Create = function(req, res) {
 	var conta = new Conta(req.body);
 	conta.User = req.user._id;
 
@@ -21,7 +21,7 @@ var path = require('path'),
 	});
 };
 
-exports.Update = function(req, res) {
+/*exports.Update = function(req, res) {
 	var conta = req.Conta;
 
 	conta = _.extend(conta, req.body);

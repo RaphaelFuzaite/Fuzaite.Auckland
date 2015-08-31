@@ -22,10 +22,10 @@ var InitVendors = (function () {
 				$('.message .close').on('click', function() {
   					$(this).closest('.message').fadeOut();
 				});
-				$('.ui.modal').modal({
+				/*$('.ui.modal').modal({
 				    blurring: true,
 					closable: false,
-		  		}).modal('attach events', '.modal-open.button', 'show');
+		  		}).modal('attach events', '.modal-open.button', 'show');*/
 			}
 		}
 	};

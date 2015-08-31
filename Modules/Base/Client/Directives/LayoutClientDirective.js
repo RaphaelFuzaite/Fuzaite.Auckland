@@ -42,3 +42,19 @@ angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus
 		};
 	}
 ]);
+
+angular.module('Base').directive('layoutContentDefinition', function() {
+	return {
+		restrict: 'A',
+		replace: false,
+		templateUrl: '/Modules/Base/Templates/ContentDefinition.html',
+		controller: ['$scope', '$state', '$rootScope', function ($scope, $state, $rootScope) {
+			$rootScope.$on('$stateChangeSuccess', function(){
+				$scope.ContentDefinition = {
+					Titulo : $state.current.data.Titulo,
+					Subtitulo : $state.current.data.Subtitulo
+				}
+			});
+		}]
+	};
+});
