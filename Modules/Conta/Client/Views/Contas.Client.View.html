@@ -1,0 +1,61 @@
+<section ng-controller="HomeContasClientController">
+	<!--<div class="ui compact horizontal segments">
+		<div class="ui center aligned attached segment" ng-repeat="Conta in Contas">
+			<h1 class="ui header">
+				{{ Conta.Saldo | byteNotation:3:"R$ " }}
+				<div class="sub header">
+					<span class="ui image {{ Conta.Cor }} label">
+						{{ Conta.Nome }}
+						<div class="detail">{{ Conta.CategoriaDeConta.Nome }}</div>
+					</span>
+				</div>
+				<div class="ui segment basic"></div>
+			</h1>
+		</div>
+		<div class="ui bottom attached label">
+			<h5 class="ui header">
+				SALDO ATUAL
+				<div class="sub header">
+					{{ Contas | sumOfValue:'Saldo' | currency:"R$ " }}
+				</div>
+			</h5>
+		</div>
+	</div>-->
+	<div class="ui three stackable cards">
+		<div class="card {{ Conta.Cor }}" ng-repeat="Conta in Contas">
+			<div class="content">
+			<a class="ui {{ Conta.Cor }} empty circular label"></a>
+			<!--<img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">-->
+			<div class="header">
+				{{ Conta.Saldo | byteNotation:3:"R$ " }}
+			</div>
+			<div class="meta">
+				{{ Conta.Atualizacao || Conta.Criacao | date:"dd/MM/yyyy 'às' HH:mm"  }}
+			</div>
+			<div class="description">
+				{{ Conta.Nome }} - {{ Conta.CategoriaDeConta.Nome }}
+			</div>
+			</div>
+			<div class="extra content hidden">
+				<div class="ui two buttons">
+					<div class="ui basic green button">Approve</div>
+					<div class="ui basic red button">Decline</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="blurring dimmable image">
+			<div class="ui inverted dimmer">
+				<div class="content">
+				<div class="center">
+					<div class="ui primary button">Add Friend</div>
+				</div>
+				</div>
+			</div>
+			<i class="plus icon"></i>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+</section>

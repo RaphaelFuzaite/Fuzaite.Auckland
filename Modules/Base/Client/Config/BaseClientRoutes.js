@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/');
+		//$urlRouterProvider.otherwise('/');
 		$urlRouterProvider.otherwise('NotFound');
 
 		$stateProvider.state('Inicio', {

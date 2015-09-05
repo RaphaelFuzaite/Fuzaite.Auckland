@@ -8,7 +8,7 @@ var path = require('path'),
 
 exports.Create = function(req, res) {
 	var conta = new Conta(req.body);
-	conta.User = req.user._id;
+	conta.Usuario = req.user._id;
 
 	conta.save(function(err) {
 		if (err) {
