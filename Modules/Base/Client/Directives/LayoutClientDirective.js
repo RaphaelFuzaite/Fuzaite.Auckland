@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
+angular.module('Base').directive('layoutHeader', ['Menus', 'ProgressBar', function(Menus, ProgressBar) {
 		return {
 			restrict: 'A',
 			templateUrl: '/Modules/Base/Templates/Header.html',
@@ -11,6 +11,8 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 				$scope.AlternarModoDoMenu = function () {
 					Menus.ChangeMenuState('Sidebar');	
 				};
+				
+				$scope.ProgressBar = ProgressBar.GetPercent();
 			}]
 		};
 	}
