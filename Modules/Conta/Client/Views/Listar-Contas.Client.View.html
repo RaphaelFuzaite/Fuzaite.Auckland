@@ -1,19 +1,12 @@
-<section ng-controller="ListarContaClientController">
+<section ng-controller="ListarContasClientController">
 	<header class="ui basic clearing segment">
-		<div class="page-title">
-			<h2 class="ui header">
-		      Contas
-		      <div class="sub header">Centralize suas rendas</div>
-		    </h2>
-		</div>
 		<div class="page-info">
 			<div class="ui right floated small bg-pomegranate labeled icon button activating-popup">
-          		<i class="plus icon"></i> Nova Conta
-        	</div>
-            <div component-popup></div>
-		</div>  
-    </div>
-	</header>
+				<i class="plus icon"></i> Nova Conta
+			</div>
+			<div component-popup></div>
+		</div>
+	</header>	
 	<div class="ui compact horizontal segments">
 		<div class="ui center aligned attached segment" ng-repeat="Conta in Contas">
 			<h1 class="ui header">

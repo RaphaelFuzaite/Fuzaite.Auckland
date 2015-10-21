@@ -2,10 +2,10 @@
 
 angular.module('Base').service('Messaging', ['$interval', function ($interval) {
     
-    var ItemMessage = function (data) {
+    var ItemMessage = function (data, messagingClass) {
         var self = this;
         
-        self.Class = _messaging.MessagingClass.Warning;
+        self.Class = messagingClass;
         self.Titulo = 'Solicitação inválida!';
         self.Texto = data.message;
         self.Duracao = 10;
@@ -32,8 +32,14 @@ angular.module('Base').service('Messaging', ['$interval', function ($interval) {
         CompleteDisclaimer: function (statusCode, data) {
             switch (statusCode) {
                 case 400:
-                    this.Itens.push(new ItemMessage(data));
+                    this.Itens.push(new ItemMessage(data, _messaging.MessagingClass.Warning));
                     break;
+                case 403:
+                    this.Itens.push(new ItemMessage(data, _messaging.MessagingClass.Info));
+                    break;
+                case 500:
+                    this.Itens.push(new ItemMessage(data, _messaging.MessagingClass.Error));
+                    break;                                        
                 default:
                     this.ResetQueue();
                     break;

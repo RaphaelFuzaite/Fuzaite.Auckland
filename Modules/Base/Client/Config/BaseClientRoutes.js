@@ -4,13 +4,23 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 		$urlRouterProvider.otherwise('/');
 		$urlRouterProvider.otherwise('NotFound');
 
-		$stateProvider.state('Inicio', {
+		$stateProvider
+		.state('Inicio', {
 			url: '/',
-			templateUrl: 'Modules/Base/Views/HomeBaseClientView.html'
-		}).state('NotFound', {
-        url: '/NotFound',
-        templateUrl: 'Modules/Base/Views/404BaseClientView.html'
-      });
+			templateUrl: 'Modules/Base/Views/HomeBaseClientView.html',
+			data: {
+				Titulo: 'Fuzaite Auckland',
+				Subtitulo: 'Gerenciamento Financeiro',
+				ncyBreadcrumbLabel: '<i class="home icon"></i> Início'
+  			},
+			ncyBreadcrumb: {
+				label: 'Início'
+			}
+		})
+		.state('NotFound', {
+        	url: '/NotFound',
+        	templateUrl: 'Modules/Base/Views/404BaseClientView.html'
+      	});
 	}
 ]).config(['$httpProvider', function($httpProvider) {
 		$httpProvider.interceptors.push(['$q', '$location', 'Authentication', 'Messaging',
@@ -38,6 +48,18 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 			}
 		]);
 	}
-]).run(['Authentication', function (Authentication) {
+]).config(['$breadcrumbProvider',function($breadcrumbProvider) {
+    $breadcrumbProvider.setOptions({
+		templateUrl: '/Modules/Base/Templates/Breadcrumb.html'
+    });
+}]).run(['Authentication', function (Authentication) {
     //Authentication.FetchUser();
-}]);
+}]).run(function($rootScope) {
+	$rootScope.$on('$stateChangeStart', function() {
+		console.log('Carregando...');
+	});
+	
+	$rootScope.$on('$stateChangeSuccess', function() {
+		console.log('Carregado...');
+	});
+});

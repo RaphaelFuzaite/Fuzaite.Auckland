@@ -1,11 +1,17 @@
 'use strict';
-angular.module('Projeto').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+angular.module('Projeto').config(['$stateProvider', function($stateProvider) {
 		
-		$urlRouterProvider.otherwise('/');
-
-		$stateProvider.state('projeto', {
+		$stateProvider.state('Projeto', {
 			url: '/Projetos',
-			templateUrl: 'Modules/Projeto/Views/ProjetosListar.html'
+			templateUrl: 'Modules/Projeto/Views/ProjetosListar.html',
+			data: {
+				Titulo: 'Projetos',
+				Subtitulo: 'Planejamentos registrados',
+			},
+			ncyBreadcrumb: {
+				parent: 'Inicio',
+				label: 'Projetos'
+  			}
 		});
 	}
 ]);

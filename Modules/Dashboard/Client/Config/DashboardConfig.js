@@ -5,7 +5,15 @@ angular.module('Dashboard').config(['$stateProvider', '$urlRouterProvider', func
 
 		$stateProvider.state('Dashboard', {
 			url: '/Dashboard',
-			templateUrl: 'Modules/Dashboard/Views/Home.html'
+			templateUrl: 'Modules/Dashboard/Views/Home.html',
+			data: {
+				Titulo: 'Dashboard',
+				Subtitulo: 'Resumo de desempenho',
+			},
+			ncyBreadcrumb: {
+				parent: 'Inicio',
+				label: 'Dashboard'
+  			}
 		});
 	}
 ]);

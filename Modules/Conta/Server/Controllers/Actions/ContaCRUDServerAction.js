@@ -8,7 +8,7 @@ var path = require('path'),
 
 exports.Create = function(req, res) {
 	var conta = new Conta(req.body);
-	conta.User = req.user._id;
+	conta.Usuario = req.user._id;
 
 	conta.save(function(err) {
 		if (err) {
@@ -21,7 +21,7 @@ exports.Create = function(req, res) {
 	});
 };
 
-exports.Update = function(req, res) {
+/*exports.Update = function(req, res) {
 	var conta = req.Conta;
 
 	conta = _.extend(conta, req.body);
@@ -35,7 +35,7 @@ exports.Update = function(req, res) {
 			res.json(conta);
 		}
 	});
-};
+};*/
 
 exports.List = function(req, res) {
 	Conta.find().sort('-Criacao').populate('User', 'NomeCompleto').populate('CategoriaDeConta', 'Nome').exec(function(err, contas) {

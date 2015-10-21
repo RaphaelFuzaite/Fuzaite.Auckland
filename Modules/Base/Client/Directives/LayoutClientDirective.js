@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
+angular.module('Base').directive('layoutHeader', ['Menus', 'ProgressBar', function(Menus, ProgressBar) {
 		return {
 			restrict: 'A',
 			templateUrl: '/Modules/Base/Templates/Header.html',
@@ -11,12 +11,12 @@ angular.module('Base').directive('layoutHeader', ['Menus', function(Menus) {
 				$scope.AlternarModoDoMenu = function () {
 					Menus.ChangeMenuState('Sidebar');	
 				};
+				
+				$scope.ProgressBar = ProgressBar.GetPercent();
 			}]
 		};
 	}
-]);
-
-angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus) {
+]).directive('layoutNavigationBar', ['Menus', function(Menus) {
 		return {
 			restrict: 'A',
 			replace: true,
@@ -41,4 +41,19 @@ angular.module('Base').directive('layoutNavigationBar', ['Menus', function(Menus
 			}]
 		};
 	}
-]);
+]).directive('layoutContentDefinition', function() {
+	return {
+		restrict: 'A',
+		replace: false,
+		templateUrl: '/Modules/Base/Templates/ContentDefinition.html',
+		controller: ['$scope', '$state', '$rootScope', function ($scope, $state, $rootScope) {
+			$rootScope.$on('$stateChangeSuccess', function(){
+				$scope.ContentDefinition = {
+					Titulo : $state.current.data.Titulo,
+					Subtitulo : $state.current.data.Subtitulo
+				};
+				
+			});
+		}]
+	};
+});
