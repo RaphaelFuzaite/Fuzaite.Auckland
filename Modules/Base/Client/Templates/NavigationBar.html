@@ -1,20 +1,45 @@
-<aside class="ui vertical inverted visible sidebar menu bg-wet-asphalt" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }" ng-if="Menus.ShouldRender(Authentication);" ng-animate="'animate'">
-	<div class="item">
-		<div class="profile">
-			<a href="#">
-				<img ng-src="Modules/Base/Img/Usuario/{{ Usuario.Imagem }}">
-				<div class="user-info">
-					<strong class="header">{{ Usuario.Nome }}</strong>
-					<div class="description">
-						<small>{{ Usuario.Descricao }}</small>
-					</div>
-				</div>
-				<i class="right angle icon"></i>
-			</a>
-		</div>
-	</div>
+<div class="ui fluid vertical inverted menu bg-midnight-black" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }" ng-if="Menus.ShouldRender(Authentication);" ng-animate="'animate'">
+  <div class="row ui fluid labeled center aligned icon menu inverted fast-access">
+      <a class="item">
+        <i class="home icon"></i>
+      </a>
+      <a class="item">
+        <i class="user icon"></i>
+      </a>
+      <a class="item">
+        <i class="power icon"></i>
+      </a>
+  </div>
+  <div class="item">
+    <div class="header">Análise</div>
+    <div class="menu">
+      <a class="item" href="/#!/Dashboard">Dashboard</a>
+      <a class="item" href="/#!/Relatorios">Relatórios</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">Gerenciamento</div>
+    <div class="menu">
+      <a class="item" href="/#!/Projetos">Projetos</a>
+      <a class="item" href="/#!/Contas">Contas</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">Configurações</div>
+    <div class="menu">
+      <a class="item" href="/#!/Opcoes">Opções</a>
+      <a class="item" href="/#!/Usuario/Preferencias">Preferências</a>
+    </div>
+  </div>
+  <div class="item">
+    <div class="header">Usuário</div>
+    <div class="menu">
+      <a class="item" href="/#!/Perfil">Perfil</a>
+      <a class="item" href="/#!/Mensagens">Mensagens</a>
+      <a class="item" href="/#!/Usuario/Logout">Sair</a>
+    </div>
+  </div>
 	
-	<a class="item popup" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}" data-content="{{ Menu.Titulo }}" data-position="right center">
+	<!--<a class="item popup" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}" data-content="{{ Menu.Titulo }}" data-position="right center">
 		<i class="{{ Menu.Class }} icon"></i> <span>{{ Menu.Titulo }}</span>
-	</a>
-</aside>
+	</a>-->

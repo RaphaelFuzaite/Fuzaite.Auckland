@@ -35,20 +35,34 @@
 </head>
 
 <body class="ng-cloak">
-	<header class="navbar">
+	<div class="ui grid">
+		<header class="three wide column bg-midnight-black">
+			<div class="ui grid">
+				<nav class="menu sixteen wide column">
+					<div layout-navigation-bar></div>
+				</nav>
+			</div>
+		</header>
+		<div class="nine wide column bg-clouds"></div>
+		<aside class="four wide column bg-silver"></aside>
+	</div>
+	
+	<!--<header class="navbar">
 		<div layout-header></div>
-	</header>	
+	</header>
+	<nav class="menu">
+		<div layout-navigation-bar></div>
+	</nav>	
 	<div class="message-queue">
 		<div architecture-messaging-queue></div>
 	</div>
 	<div class="main-content">
-		<div layout-navigation-bar></div>
 		<section class="container" ng-cloak>
 			<section layout-content-definition></section>
 			{% block content %}{% endblock %}
 		</section>
 		<div component-modal></div>
-	</div>
+	</div>-->
 	
 	<!--Load The Socket.io File-->
 	<!--script type="text/javascript" src="/Socket.io/Socket.io.js"></script-->	

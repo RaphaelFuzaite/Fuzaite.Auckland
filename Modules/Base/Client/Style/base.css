@@ -88,7 +88,7 @@
 }
 
 .bg-wet-asphalt {
-	background-color: #34495e !important;
+	background-color: #317589 !important;
 	color: #FFF !important;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .bg-thousand-herb {
-	background-color: #317589 !important;
+	background-color: #34495e !important;
 	color: #FFF !important;
 }
 
@@ -112,6 +112,15 @@
 
 .text-midnigth-blue {
 	color: #2c3e50 !important;
+}
+
+.bg-midnight-black {
+	background-color: #303438 !important;
+	color: #FFF !important;
+}
+
+.bg-midnight-black {
+	color: #303438 !important;
 }
 
 .bg-sun-flower {
@@ -250,15 +259,15 @@ header.navbar .container div.right.menu {
 	height: 53px;
 }
 
-.main-content > aside.sidebar.menu {
-	margin-top: 60px !important;
-	width: 240px;
+nav.menu > aside.sidebar.menu {
+	/*width: 240px;*/
+	background-color: #313233 !important;
 }
 
-.main-content > aside.sidebar.menu a.item:hover {
+nav.menu > aside.sidebar.menu a.item:hover {
 	color: #fff;
 	border-left: 3px solid #e67e22;
-	background-color: #2c3e50 !important;
+	background-color: #2A2B2F !important;
 }
 
 .main-content > section.container {
@@ -266,75 +275,37 @@ header.navbar .container div.right.menu {
 	margin: 0 25px 0 25px;
 }
 
-.main-content > aside.sidebar + section.container {
+nav.menu > aside.sidebar + section.container {
 	margin: 0 25px 0 265px;
 }
 
-.menu.vertical .item:first-child {
-	background-color: #2c3e50 !important;
+.menu.vertical > .fast-access {
+	background-color: #363942 !important;
+	font-size: 18px;
 }
 
-.main-content > aside.sidebar.menu .profile {
-	display: inline-block;
-	width: 100%;
-	cursor: pointer;
+.ui.vertical.inverted.menu .menu.fast-access .item {
+	color: rgba(255,255,255,0.7);
 }
 
-.main-content > aside.sidebar.menu .profile a > i {
-	float: right;
-	color: #FFF;
-	margin: 15px 0;
+.menu.vertical .labeled.fast-access .item > .icon:not(.dropdown) {
+	margin: 0em 0em 0em 0em !important;
+	line-height: 34px;
 }
 
-.main-content > aside.sidebar.menu .profile > a img {
-	width: 48px;
-	display: block;
-	float: left;
-}
-
-.main-content > aside.sidebar.menu .profile .user-info {
-	margin-left: 12px;
-	float: left;
-	color: #FFF;
-	font-weight: 400;
-	margin-top: 8px;
-}
-
-.main-content > aside.sidebar.menu.sidebar-narrow {
-	margin-top: 60px !important;
-	width: 56px;
-}
-
-.main-content > aside.sidebar.menu.sidebar-narrow .item span,
-.main-content > aside.sidebar.menu.sidebar-narrow .profile .user-info,
-.main-content > aside.sidebar.menu.sidebar-narrow .profile i.icon {
-	display: none;
-}
-
-.main-content > aside.sidebar.menu.sidebar-narrow .item:first-child {
-	padding: 10px 5px;
-}
-
-.main-content > aside.sidebar.menu.sidebar-narrow .item {
-	padding: 15px 3px 16px 0;
-	width: 100%;
-	text-align: center;
-	min-height: 50px;
-}
-
-.main-content > aside.sidebar.menu a.item {
+nav.menu > aside.sidebar.menu a.item {
 	padding: 13px 40px 14px 14px;
 	font-size: 16px;
 }
 
-.main-content > aside.sidebar.menu .item i.icon {
+nav.menu > aside.sidebar.menu .item i.icon {
 	position: absolute;
 	right: 12px;
 	opacity: 0.8;
 	font-size: 1.35em;
 }
 
-.main-content > aside.sidebar.menu.sidebar-narrow .item .icon {
+nav.menu > aside.sidebar.menu.sidebar-narrow .item .icon {
   	position: static;
 	width: 100%;
 	margin: 0em;
@@ -342,11 +313,7 @@ header.navbar .container div.right.menu {
 	display: block;
 }
 
-.main-content > aside.sidebar.menu.sidebar-narrow .profile > a img {
-	width: 38px;
-}
-
-.main-content > aside.sidebar-narrow + section.container {
+nav.menu > aside.sidebar-narrow + section.container {
   margin-left: 80px;
 }
 

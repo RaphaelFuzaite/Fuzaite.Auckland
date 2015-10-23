@@ -33,3 +33,11 @@ html, body {
 	background: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 0.5);
 }
+
+.ui.grid header.column {
+	padding-right: 0px !important;
+}
+
+.ui.menu {
+    font-size: 1.1rem;
+}
