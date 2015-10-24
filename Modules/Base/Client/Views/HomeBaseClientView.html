@@ -1,10 +1,44 @@
 <section ng-controller="BaseController">
-	<header>
-		<div class="page-title">
-			<h2 class="ui header">
-		      Fuzaite Auckland
-		      <div class="sub header">Gerenciamento Financeiro</div>
-		    </h2>
+	<div class="ui equal width grid">
+		<div class="row">
+			<div class="column">			
+				<div class="ui attached segment">
+					<h4 class="ui header">Resumo Financeiro</h4>
+				</div>
+				<div class="ui attached segment">
+					<canvas id="line" class="chart chart-line" 
+					chart-data="data" 
+					chart-labels="labels" 
+					chart-legend="true" 
+					chart-series="series" 
+					chart-click="onClick" >
+					</canvas> 
+				</div>
+			</div>
+			<div class="column">			
+				<div class="ui attached segment">
+					<h4 class="ui header">Acesso Rápido</h4>
+				</div>
+				<div class="ui attached basic segment">
+					<div class="ui equal width grid aligned icon center menu">
+						<a class="item text-green-sea column">
+							<i class="sign in icon"></i>
+							<div>Receita</div>
+						</a>
+						<a class="item text-scarlet column">
+							<i class="sign out icon"></i>
+							<div>Despesa</div>
+						</a>
+						<a class="item text-peter-river column">
+							<i class="exchange icon"></i>
+							<div>Transferência</div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</header>
+		<div class="row">
+			<div class="column"></div>
+		</div>
+	</div>
 </section>

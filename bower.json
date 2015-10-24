@@ -24,7 +24,8 @@
     "angular-input-mask-i18n": "~1.4.1",
     "angular-i18n": "~1.4.3",
     "angular-mocks": "~1.4.3",
-    "angular-breadcrumb": "~0.4.1"
+    "angular-breadcrumb": "~0.4.1",
+    "angular-chart": "~0.3.2"
   },
   "resolutions": {
     "angular": "~1.4"

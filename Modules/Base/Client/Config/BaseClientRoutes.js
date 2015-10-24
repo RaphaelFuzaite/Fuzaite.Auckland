@@ -9,9 +9,9 @@ angular.module('Base').config(['$stateProvider', '$urlRouterProvider', function(
 			url: '/',
 			templateUrl: 'Modules/Base/Views/HomeBaseClientView.html',
 			data: {
-				Titulo: 'Fuzaite Auckland',
-				Subtitulo: 'Gerenciamento Financeiro',
-				ncyBreadcrumbLabel: '<i class="home icon"></i> Início'
+				Titulo: 'Início',
+				Subtitulo: 'Visão Geral',
+				ncyBreadcrumbLabel: 'Início'
   			},
 			ncyBreadcrumb: {
 				label: 'Início'

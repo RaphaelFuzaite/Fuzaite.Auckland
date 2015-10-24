@@ -598,3 +598,12 @@ section.container > section {
 .ui.main.menu {
 	height: 55px;
 }
+
+section .ui.segment .menu.icon i {
+	font-size: 30px;
+	margin-bottom: 8px !important;
+}
+
+section .ui.segment .menu.icon i + div {
+	font-size: 14px;
+}
