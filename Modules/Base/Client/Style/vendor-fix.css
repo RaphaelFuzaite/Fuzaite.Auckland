@@ -7,10 +7,6 @@
 	width: 100%;
 }
 
-.ui.vertical.menu .item {
-  border-left: 3px solid transparent;
-}
-
 .ui.buttons .or:before {
 	content: "ou";	
 }
@@ -40,4 +36,20 @@ html, body {
 
 .ui.menu {
     font-size: 1.1rem;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.ui.menu > .item:first-child {
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.ui.menu:first-child,
+.ui.menu.vertical + .ui.menu {
+	margin: 0px;
 }

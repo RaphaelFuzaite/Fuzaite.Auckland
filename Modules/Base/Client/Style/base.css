@@ -7,6 +7,10 @@
 	color: #1abc9c !important;
 }
 
+.border-turquoise {
+	border-color: #1abc9c !important;
+}
+
 .bg-mountain-meadow {
 	background-color: #16A085 !important;
 	color: #FFF !important;
@@ -14,6 +18,10 @@
 
 .text-mountain-meadow {
 	color: #16A085 !important;
+}
+
+.border-mountain-meadow {
+	border-color: #16A085 !important;
 }
 
 .bg-green-sea {
@@ -25,6 +33,10 @@
 	color: #16a085 !important;
 }
 
+.border-green-sea {
+	border-color: #16a085 !important;
+}
+
 .bg-emerald {
 	background-color: #2ecc71 !important;
 	color: #FFF !important;
@@ -32,6 +44,10 @@
 
 .text-emerald {
 	color: #2ecc71 !important;
+}
+
+.border-emerald {
+	border-color: #2ecc71 !important;
 }
 
 .bg-nephritis {
@@ -43,6 +59,10 @@
 	color: #27ae60 !important;
 }
 
+.border-nephritis {
+	border-color: #27ae60 !important;
+}
+
 .bg-peter-river {
 	background-color: #3498db !important;
 	color: #FFF !important;
@@ -50,6 +70,10 @@
 
 .text-peter-river {
 	color: #3498db !important;
+}
+
+.border-peter-river {
+	border-color: #3498db !important;
 }
 
 .bg-belize-hole {
@@ -61,6 +85,10 @@
 	color: #2980b9 !important;
 }
 
+.border-belize-hole {
+	border-color: #2980b9 !important;
+}
+
 .bg-amethyst {
 	background-color: #9b59b6 !important;
 	color: #FFF !important;
@@ -68,6 +96,10 @@
 
 .text-amethyst {
 	color: #9b59b6 !important;
+}
+
+.border-amethyst {
+	border-color: #9b59b6 !important;
 }
 
 .bg-iris {
@@ -79,12 +111,21 @@
 	color: #763568 !important;
 }
 
+.border--iris {
+	border-color: #763568 !important;
+}
+
 .bg-wisteria {
 	background-color: #8e44ad !important;
 	color: #FFF !important;
 }
+
 .text-wisteria {
 	color: #8e44ad !important;
+}
+
+.border-wisteria {
+	border-color: #8e44ad !important;
 }
 
 .bg-wet-asphalt {
@@ -96,6 +137,10 @@
 	color: #317589 !important;
 }
 
+.border-wet-asphalt {
+	border-color: #317589 !important;
+}
+
 .bg-thousand-herb {
 	background-color: #34495e !important;
 	color: #FFF !important;
@@ -103,6 +148,10 @@
 
 .text-thousand-herb {
 	color: #34495e !important;
+}
+
+.border--thousand-herb {
+	border-color: #34495e !important;
 }
 
 .bg-midnight-blue {
@@ -114,101 +163,165 @@
 	color: #2c3e50 !important;
 }
 
+.border--midnigth-blue {
+	border-color: #2c3e50 !important;
+}
+
 .bg-midnight-black {
 	background-color: #303438 !important;
 	color: #FFF !important;
 }
 
-.bg-midnight-black {
+.text-midnight-black {
 	color: #303438 !important;
+}
+
+.border-midnight-black {
+	border-color: #303438 !important;
 }
 
 .bg-sun-flower {
 	background-color: #f1c40f !important;
 	color: #FFF !important;
 }
+
 .text-sun-flower {
 	color: #f1c40f !important;
+}
+
+.border-sun-flower {
+	border-color: #f1c40f !important;
 }
 
 .bg-saffron {
 	background-color: #F4D03F !important;
 	color: #FFF !important;
 }
+
 .text-saffron {
 	color: #F4D03F !important;
+}
+
+.border-saffron {
+	border-color: #F4D03F !important;
 }
 
 .bg-orange {
 	background-color: #f39c12 !important;
 	color: #FFF !important;
 }
+
 .text-orange {
 	color: #f39c12 !important;
+}
+
+.border-orange {
+	border-color: #f39c12 !important;
 }
 
 .bg-carrot {
 	background-color: #e67e22 !important;
 	color: #FFF !important;
 }
+
 .text-carrot {
 	color: #e67e22 !important;
+}
+
+.border-carrot {
+	border-color: #e67e22 !important;
 }
 
 .bg-alizarin {
 	background-color: #e74c3c !important;
 	color: #FFF !important;
 }
+
 .text-alizarin {
 	color: #e74c3c !important;
 }
+
+.border-alizarin {
+	border-color: #e74c3c !important;
+}
+
 
 .bg-scarlet {
 	background-color: #CF3A24 !important;
 	color: #FFF !important;
 }
+
 .text-scarlet {
 	color: #CF3A24 !important;
+}
+
+.border-scarlet {
+	border-color: #CF3A24 !important;
 }
 
 .bg-pomegranate {
 	background-color: #c0392b !important;
 	color: #FFF !important;
 }
+
 .text-pomegranate {
 	color: #c0392b !important;
+}
+
+.border-pomegranate {
+	border-color: #c0392b !important;
 }
 
 .bg-clouds {
 	background-color: #ecf0f1 !important;
 	color: #95a5a6 !important;
 }
+
 .text-clouds {
 	color: #ecf0f1 !important;
+}
+
+.border-clouds {
+	border-color: #ecf0f1 !important;
 }
 
 .bg-silver {
 	background-color: #bdc3c7 !important;
 	color: #FFF !important;
 }
+
 .text-silver {
 	color: #bdc3c7 !important;
+}
+
+.border-silver {
+	border-color: #bdc3c7 !important;
 }
 
 .bg-concrete {
 	background-color: #95a5a6 !important;
 	color: #FFF !important;
 }
+
 .text-concrete {
 	color: #95a5a6 !important;
+}
+
+.border-concrete {
+	border-color: #95a5a6 !important;
 }
 
 .bg-asbestos {
 	background-color: #7f8c8d !important;
 	color: #FFF !important;
 }
+
 .text-asbestos {
 	color: #7f8c8d !important;
+}
+
+.border-asbestos {
+	border-color: #7f8c8d !important;
 }
 
 ::-webkit-scrollbar {
@@ -259,27 +372,12 @@ header.navbar .container div.right.menu {
 	height: 53px;
 }
 
-nav.menu > aside.sidebar.menu {
-	/*width: 240px;*/
-	background-color: #313233 !important;
-}
-
-nav.menu > aside.sidebar.menu a.item:hover {
-	color: #fff;
-	border-left: 3px solid #e67e22;
-	background-color: #2A2B2F !important;
-}
-
 .main-content > section.container {
 	position: relative;
 	margin: 0 25px 0 25px;
 }
 
-nav.menu > aside.sidebar + section.container {
-	margin: 0 25px 0 265px;
-}
-
-.menu.vertical > .fast-access {
+.ui.menu.inverted.fast-access {
 	background-color: #363942 !important;
 	font-size: 18px;
 }
@@ -465,4 +563,38 @@ section.container > section {
     text-decoration: inherit;
     text-align: center;
     speak: none;
+}
+
+.ui.vertical.menu > .item {
+	font-size: 11px;
+	color: rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+}
+
+.ui.vertical.menu > .item .label {
+	padding: 0.2em !important;
+    margin-right: 2px;
+    margin-left: -2px;
+    background-color: transparent !important;
+    border-width: 2px;
+    border-style: solid;
+	border-color: inherit;
+	opacity: 0.8;
+}
+
+.ui.vertical.menu > .item a.item {
+	border-left: 3px solid transparent;
+	color: rgba(255, 255, 255, 1) !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 14px;
+}
+
+.ui.vertical.menu > .item a.item:hover {
+	color: #fff;
+	border-width : 0px;
+	border-left-width: 3px;
+	border-style: solid;
+	border-color: inherit;
+	background-color: rgba(255,255,255,0.08) !important;
 }

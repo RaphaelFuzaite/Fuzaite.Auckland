@@ -1,5 +1,13 @@
-<div class="ui fluid vertical inverted menu bg-midnight-black" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }" ng-if="Menus.ShouldRender(Authentication);" ng-animate="'animate'">
-  <div class="row ui fluid labeled center aligned icon menu inverted fast-access">
+<div class="ui bg-midnight-black" ng-class="{ 'sidebar-narrow': Menus.Modo.Contraido }" ng-if="Menus.ShouldRender(Authentication);" ng-animate="'animate'">
+  <div class="row ui fluid bg-turquoise vertical inverted menu">
+		<div class="title item">
+			<h4 class="ui header">
+				Auckland
+				<p class="sub header"><small>Gerenciador Financeiro</small></p>
+			</h4>
+		</div>
+  </div>
+  <div class="row ui fluid three labeled center aligned icon menu inverted fast-access">
       <a class="item">
         <i class="home icon"></i>
       </a>
@@ -9,37 +17,45 @@
       <a class="item">
         <i class="power icon"></i>
       </a>
-  </div>
-  <div class="item">
-    <div class="header">Análise</div>
-    <div class="menu">
-      <a class="item" href="/#!/Dashboard">Dashboard</a>
-      <a class="item" href="/#!/Relatorios">Relatórios</a>
+  </div>  
+  <div class="ui fluid vertical inverted menu bg-midnight-black">
+    <div class="item">
+      <div class="header border-pomegranate">
+        <span class="ui empty circular label"></span> Análise
+      </div>
+      <div class="menu border-pomegranate">
+        <a class="item" href="/#!/Dashboard">Dashboard</a>
+        <a class="item" href="/#!/Relatorios">Relatórios</a>
+      </div>
     </div>
-  </div>
-  <div class="item">
-    <div class="header">Gerenciamento</div>
-    <div class="menu">
+    <div class="item">
+    <div class="header border-carrot">
+      <span class="ui empty circular label"></span> Gerenciamento
+    </div>
+    <div class="menu border-carrot">
       <a class="item" href="/#!/Projetos">Projetos</a>
-      <a class="item" href="/#!/Contas">Contas</a>
+      <a class="item" href="/#!/Receitas">Receitas</a>
+      <a class="item" href="/#!/Despesas">Despesas</a>
+      <a class="item" href="/#!/Contas">Contas</a>    
     </div>
   </div>
   <div class="item">
-    <div class="header">Configurações</div>
-    <div class="menu">
+    <div class="header border-amethyst">
+      <span class="ui empty circular label"></span> Configurações
+    </div>
+    <div class="menu border-amethyst">
       <a class="item" href="/#!/Opcoes">Opções</a>
       <a class="item" href="/#!/Usuario/Preferencias">Preferências</a>
     </div>
   </div>
   <div class="item">
-    <div class="header">Usuário</div>
-    <div class="menu">
+    <div class="header border-wet-asphalt">
+      <span class="ui empty circular label"></span> Usuário
+    </div>
+    <div class="menu border-wet-asphalt">
       <a class="item" href="/#!/Perfil">Perfil</a>
       <a class="item" href="/#!/Mensagens">Mensagens</a>
       <a class="item" href="/#!/Usuario/Logout">Sair</a>
     </div>
   </div>
-	
-	<!--<a class="item popup" ng-repeat="Menu in Menus.Itens" ng-href="{{ Menu.Link }}" data-content="{{ Menu.Titulo }}" data-position="right center">
-		<i class="{{ Menu.Class }} icon"></i> <span>{{ Menu.Titulo }}</span>
-	</a>-->
+</div>
