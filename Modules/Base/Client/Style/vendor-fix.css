@@ -12,7 +12,10 @@
 }
 
 html, body {
-	height: auto;
+	height: 100%;
+}
+.ui.grid {
+	height: 100%;
 }
 
 .dimmed.dimmable>:not(.dimmer) {
@@ -52,4 +55,13 @@ html, body {
 .ui.menu:first-child,
 .ui.menu.vertical + .ui.menu {
 	margin: 0px;
+}
+
+.ui.progress.attached, 
+.ui.progress.attached .bar {
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.5);
 }

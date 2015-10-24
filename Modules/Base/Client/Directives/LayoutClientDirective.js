@@ -4,7 +4,7 @@ angular.module('Base').directive('layoutHeader', ['Menus', 'ProgressBar', functi
 		return {
 			restrict: 'A',
 			templateUrl: '/Modules/Base/Templates/Header.html',
-			controller: ['$scope', 'UsuarioClientModel', function ($scope, Usuario) {
+			controller: ['$scope', 'UsuarioClientModel', '$state', '$rootScope', function ($scope, Usuario, $state, $rootScope) {
 				
 				$scope.Authentication = new Usuario({}).Authentication.Get();
 				
@@ -13,6 +13,14 @@ angular.module('Base').directive('layoutHeader', ['Menus', 'ProgressBar', functi
 				};
 				
 				$scope.ProgressBar = ProgressBar.GetPercent();
+				
+				$rootScope.$on('$stateChangeSuccess', function(){
+					$scope.Header = {
+						Titulo : $state.current.data.Titulo,
+						Subtitulo : $state.current.data.Subtitulo
+					};
+					
+				});				
 			}]
 		};
 	}

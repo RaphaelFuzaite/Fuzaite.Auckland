@@ -36,31 +36,36 @@
 
 <body class="ng-cloak">
 	<div class="ui grid">
-		<header class="three wide column bg-midnight-black">
-			<nav>
-				<div layout-navigation-bar></div>
-			</nav>
-		</header>
-		<div class="nine wide column bg-clouds"></div>
-		<aside class="four wide column bg-silver"></aside>
-	</div>
-	
-	<!--<header class="navbar">
-		<div layout-header></div>
-	</header>
-	<nav class="menu">
-		<div layout-navigation-bar></div>
-	</nav>	
-	<div class="message-queue">
-		<div architecture-messaging-queue></div>
-	</div>
-	<div class="main-content">
-		<section class="container" ng-cloak>
-			<section layout-content-definition></section>
-			{% block content %}{% endblock %}
+		<nav class="three wide column bg-midnight-black">
+			<div layout-navigation-bar></div>
+		</nav>
+		<section class="thirteen wide column bg-light main-section">
+			<div class="row">
+				<header class="sixteen wide column bg-midnight-black">
+					<div layout-header></div>
+				</header>
+			</div>
+			<div class="row">
+				<div class="ui grid padded">
+					<article class="twelve wide column bg-light">
+						<div class="main-content">
+							<section class="container" ng-cloak>
+								<section layout-content-definition></section>
+								{% block content %}{% endblock %}
+							</section>
+							<div component-modal></div>
+						</div>				
+					</article>
+					<aside class="four wide column bg-clouds">
+						<div class="message-queue">
+							<div architecture-messaging-queue></div>
+						</div>				
+					</aside>
+				</div>
+			</div>
+			<div component-modal></div>
 		</section>
-		<div component-modal></div>
-	</div>-->
+	</div>
 	
 	<!--Load The Socket.io File-->
 	<!--script type="text/javascript" src="/Socket.io/Socket.io.js"></script-->	

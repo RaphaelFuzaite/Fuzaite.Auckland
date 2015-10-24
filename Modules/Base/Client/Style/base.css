@@ -272,6 +272,19 @@
 	border-color: #c0392b !important;
 }
 
+.bg-light {
+	background-color: #f5f5f5 !important;
+	color: #95a5a6 !important;
+}
+
+.text-light {
+	color: #7f8c8d !important;
+}
+
+.border-light {
+	border-color: #f5f5f5 !important;
+}
+
 .bg-clouds {
 	background-color: #ecf0f1 !important;
 	color: #95a5a6 !important;
@@ -351,8 +364,11 @@ header.navbar .container div.icon .menu-content {
 	cursor: pointer;
 }
 
+
 header h4.ui.header,
-header h4.ui.header > .sub.header {
+header h4.ui.header > .sub.header,
+nav h4.ui.header,
+nav h4.ui.header > .sub.header {
 	color: #FFF;
 }
 
@@ -379,7 +395,7 @@ header.navbar .container div.right.menu {
 
 .ui.menu.inverted.fast-access {
 	background-color: #363942 !important;
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .ui.vertical.inverted.menu .menu.fast-access .item {
@@ -391,68 +407,44 @@ header.navbar .container div.right.menu {
 	line-height: 34px;
 }
 
-nav.menu > aside.sidebar.menu a.item {
-	padding: 13px 40px 14px 14px;
-	font-size: 16px;
-}
-
-nav.menu > aside.sidebar.menu .item i.icon {
-	position: absolute;
-	right: 12px;
-	opacity: 0.8;
-	font-size: 1.35em;
-}
-
-nav.menu > aside.sidebar.menu.sidebar-narrow .item .icon {
-  	position: static;
-	width: 100%;
-	margin: 0em;
-	font-size: 1.35em;
-	display: block;
-}
-
-nav.menu > aside.sidebar-narrow + section.container {
-  margin-left: 80px;
-}
-
 textarea {
     resize: none !important;
 }
 
-header .page-title {
+nav .page-title {
 	float: left;
 }
 
-header .page-title h2.ui.header {
+nav .page-title h2.ui.header {
 	margin: 0;
 	font-weight: 400;
 	line-height: 20px;
 }
 
-header .page-info {
+nav .page-info {
 	float: right;
 	cursor: pointer;
 }
 
-header .page-info .date-range {
+nav .page-info .date-range {
 	float: left;
 }
 
-header .page-info .date-range > i {
+nav .page-info .date-range > i {
   font-size: 32px;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
 }
 
-header .page-info .date-range b {
+nav .page-info .date-range b {
   display: inline-block;
   margin-top: 2px;
   margin-left: 4px;
   font-weight: 400;
 }
 
-header .page-info .date-range b > i {
+nav .page-info .date-range b > i {
   font-size: 11px;
   font-weight: 600;
   color: #777;
@@ -462,13 +454,13 @@ header .page-info .date-range b > i {
   font-style: normal;
 }
 
-header .page-info .date-range em {
+nav .page-info .date-range em {
   line-height: 30px;
   vertical-align: top;
   margin: 0 6px 0 10px;
 }
 
-header .page-info .range .label {
+nav .page-info .range .label {
   margin: 5px 0 0 8px;
   display: inline-block;
 }
@@ -597,4 +589,12 @@ section.container > section {
 	border-style: solid;
 	border-color: inherit;
 	background-color: rgba(255,255,255,0.08) !important;
+}
+
+.ui.grid section.main-section.column {
+	padding-left: 0px;
+}
+
+.ui.main.menu {
+	height: 55px;
 }

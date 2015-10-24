@@ -65,6 +65,7 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
         return sum;
     };
 }).filter('byteNotation', function() {
+    
 	return function(bytes, precision, prefix) {
 		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
 		if (typeof precision === 'undefined') precision = 1;
@@ -72,4 +73,15 @@ angular.module('Base').filter('rawHtml', ['$sce', function ($sce) {
 			number = Math.floor(Math.log(bytes) / Math.log(1000));
 		return prefix + (bytes / Math.pow(1000, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
 	};
+    
+}).filter('initials', function() {
+    
+    return function(fullName) {
+        if(!angular.isString(fullName)) return '-';
+        
+        var pieces = fullName.split(' ');
+        if(pieces.length === 1) return fullName.charAt(0).toUpperCase();
+        if(pieces.length > 1 ) return pieces[0].charAt(0) + pieces[pieces.length - 1].charAt(0);
+    };
+    
 });
