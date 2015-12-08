@@ -1,7 +1,39 @@
-<div class="ui {{ Mensagem.Class }} message" ng-animate="'animate'" ng-repeat="Mensagem in Mensagens" ng-show="Mensagem.Visivel">
-	<i class="close icon" ng-click="MessagingService.DismissMessage($index)"></i>
-	<div class="header">
-		#{{ Mensagem.Id+1 | numberFixedLen:3 }} - {{ Mensagem.Titulo }}
+<div>
+	<div class="message-queue">
+		<div class="ui {{ Mensagem.Class }} message" ng-animate="'animate'" ng-repeat="Mensagem in Mensagens" ng-show="Mensagem.Visivel">
+			<i class="close icon" ng-click="MessagingService.DismissMessage($index)"></i>
+			<div class="header">
+				#{{ Mensagem.Id+1 | numberFixedLen:3 }} - {{ Mensagem.Titulo }}
+			</div>
+			<p>{{ Mensagem.Texto }}</p>
+		</div>
 	</div>
-	<p>{{ Mensagem.Texto }}</p>
+	<div class="ui segments">
+		<div class="ui attached header bg-midnight-black">08, Dezembro de 2015</div>
+		<div class="ui attached segment">
+			<table class="ui table">
+				<thead style="display: none;">
+					<tr>
+						<th class="fourteen wide">Indicador</th>
+						<th class="two wide">#</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><h4 class="ui header"><i class="arrow circle outline up icon "></i>Receitas</h4></td>
+						<td>
+							<a class="ui bg-green-sea circular label">3</a></td>
+					</tr>
+					<tr>
+						<td><h4 class="ui header"><i class="arrow circle outline down icon"></i>Despesas</h4></td>
+						<td><a class="ui bg-alizarin circular label">4</a></td>
+					</tr>
+					<tr>
+						<td><h4 class="ui header"><i class="lightning icon"></i>Investimentos</h4></td>
+						<td><a class="ui bg-orange circular label">3</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>	
 </div>
